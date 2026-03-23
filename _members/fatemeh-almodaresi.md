@@ -7,7 +7,7 @@ research_interests:
   - "Light Transport Modeling"
 role: "PhD Student"
 scholar: "https://scholar.google.com/citations?user=9g0qyEQAAAAJ&hl=zh-CN"
-image: "https://avatars2.githubusercontent.com/u/7622877?s=400&u=3783ba41210b37a8c00db95af937aaf4b9bbdb46&v=4"
+image: "/assets/cv/npy.jpg"
 email: "213222106@seu.edu.cn"
 ---
 
