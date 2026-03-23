@@ -1,35 +1,34 @@
 ---
-title: Home
+layout: default
+title: ARTE Lab
 ---
 
-# <i class="fas fa-flask"></i>Home
+# ARTE Lab
 
+Autonomous Representation of Temps & Espace Group
 
-The COMBINE lab was created in the fall of 2014, when [Rob Patro](https://combine-lab.github.io/members/rob-patro.html) joined the [Department of Computer Science at Stony Brook University](https://www.cs.stonybrook.edu/).  In 2019, the lab moved to the [Department of Computer Science at the University of Maryland](https://www.cs.umd.edu/).  Our research interests span many areas of computational / algorithmic genomics, but our core focus is on the development of algorithms, data structures, and statistical inference methods for analyzing high-throughput sequencing data.
+ARTE is a young research team within the LAMP Laboratory at the University of Chinese Academy of Sciences (UCAS). We focus on building principled and scalable representations for complex real-world environments, with core interests in world models, spatial intelligence, and autonomous driving.
 
-### Research Interests
+Our research aims to connect perception, representation, simulation, and decision-making, while continuously tracking both academic frontiers and industrial developments.
 
-The research interests of our lab broadly span many areas of computational biology and bioinformatics.  Some of our main areas of interest include:
+## Research Interests
 
-  * Algorithms for high-throughput transcriptomics (RNA-seq)
-    * assembly, quantification, *de novo* analysis, differential expression
-    * gene expression analysis of single-cell sequencing data (specifically, single-cell RNA-seq)
-    * analysis of transcriptomes using long-read RNA-sequencing technologies (PacBio and ONT)
-    * enhanced modalities such as spatial single-cell transcriptomics and related assays such as single-cell ATAC-seq
-  * Data structures for indexing genomes and raw genomic data
-    * data structures for building, indexing and querying one or more reference genomes
-    * data structures for indexing collections of tens of thousands of raw sequencing experiments
-    * fundamental improvements to succinct data structures and their applications to genomics
-  * Applications of approximate and data-driven representations and data structures in bioinformatics
+- World Models
+- Spatial Intelligence
+- Autonomous Driving
 
-### For interested students
+We are also broadly interested in ...
 
-Are you interested in working in the COMBINE lab?  That's great! However, there are a few considerations that you should make before reaching out.  
+## About the Group
 
-While individual exceptions do exist, we generally only directly work with students who are already students at the University of Maryland.  
+As a young and active team, we are committed to exploring the next generation of machine intelligence systems that can perceive, understand, and interact with the physical world in a consistent and generalizable way.
 
-Furthermore, please note the research interests listed above. While they are not comprehensive, and we are happy to consider projects that align with our general goals, we typically do not have the resources or desire to pursue otherwise interesting projects that are far afield of these interests. In particular, we are unlikely to accept students or support projects that focus on topics like deep learning in genomics or transcriptomics --- there are plenty of other groups that are working on those topics.
+We believe that future intelligent systems will require unified representations across space, time, and modality, and our work is motivated by both fundamental research questions and emerging real-world applications.
 
-Finally, we care deeply about algorithm engineering and the overall performance and reliability of the algorithms and data structures we design and implement.  Thus, it is expected that most members of the lab will either know, or be willing to learn a language relevant to such performance concerns.  Most of our new projects are developed using [Rust](https://www.rust-lang.org/), and new members of the lab are expected to learn Rust if they don't already know it.
+## Affiliation
 
-If, considering the above, you're still interested (or, hopefully, even more interested) in joining the lab, please reach out to Rob!
+ARTE Group is part of the LAMP Laboratory, UCAS.
+
+## Contact
+
+For collaboration and research inquiries, please contact us through the laboratory or our project repositories on GitHub.
