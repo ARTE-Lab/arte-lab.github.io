@@ -25,8 +25,8 @@ We are based in Beijing, with activities spanning both the Haidian research offi
 ## Locations
 
 ### Haidian Research Office
+{% include figure.html image="contact/contact1.jpg" width="100%" %}
 
-{% include figure.html image="contact/contact.jpg" width="100%" %}
 
 B-707, Building B, Century Economy & Trade Tower  
 No. 72 North Third Ring West Road  
@@ -39,8 +39,8 @@ Haidian District, Beijing, China
 ---
 
 ### UCAS Yanqi Lake Campus
+{% include figure.html image="contact/contact.jpg" width="100%" %}
 
-{% include figure.html image="images/contact/yanqi-campus.jpg" width="100%" %}
 
 Room 332, Xueyuan 2  
 University of Chinese Academy of Sciences, Yanqi Lake Campus  
