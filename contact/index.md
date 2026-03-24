@@ -26,7 +26,7 @@ We are based in Beijing, with activities spanning both the Haidian research offi
 
 ### Haidian Research Office
 
-{% include figure.html image="images/contact/contact.jpg" width="100%" %}
+{% include figure.html image="contact/contact.jpg" width="100%" %}
 
 B-707, Building B, Century Economy & Trade Tower  
 No. 72 North Third Ring West Road  
