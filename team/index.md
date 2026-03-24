@@ -61,5 +61,47 @@ redirect_from:
 # <i class="fas fa-users"></i>
 
 
+## Current Members
+
+
+Our lab is a team focused on improving the reach, accuracy, and speed of computational analysis, specifically as
+it relates to genomics (and Biology more broadly).  We are a varied and friendly bunch.  If you're interested in 
+it relates to genomics (and Biology more broadly). We are a varied and friendly bunch. If you're interested in
+the work we're doing, please reach out!
+
+
+{% capture html %}
+{% include team-list.html role="professor" group="current" %}
+{% include team-list.html role="Graduate student" group="current" %}
+{% include team-list.html role="Undergraduate student" group="current" %}
+
+
+{% endcapture %}
+
+
+{% include centerer.html html=html %}
+
+
+<!-- section break -->
+
+
+## Alumni
+
+
+We are incredibly proud of all of the COMBINE-lab alumni who have passed through the lab, for whatever period of time they were with us. Below
+is a list of lab alumni (if you feel you're missing from the list and would like to be added, please e-mail us):
+
+
+
+{% capture html %}
+{% include team-list.html role="PhD" group="alum" mini="true" %}
+{% include team-list.html role="Master" group="alum" mini="true" %}
+{% endcapture %}
+
+
+
+{% include centerer.html html=html %}
+
+
 
 
