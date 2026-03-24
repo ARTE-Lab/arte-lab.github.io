@@ -4,7 +4,7 @@ search:
   - "Spatial Intelligence"
   - "Autonomous Driving"
   - "3D Computer Vision"
-role: "Professor"
+role: "professor"
 scholar: "https://scholar.google.com/citations?hl=zh-CN&user=kCy8JG8AAAAJ"
 group: "current"
 image: "/_members/pictures/Tong Zhang.jpg"
