@@ -5,7 +5,7 @@ research_interests:
   - "World Models"
   - "Polarized Optics"
   - "Light Transport Modeling"
-role: "Phd"
+role: "Graduate student"
 scholar: "https://scholar.google.com/citations?user=9g0qyEQAAAAJ&hl=zh-CN"
 image: "/assets/cv/npy.jpg"
 email: "213222106@seu.edu.cn"
