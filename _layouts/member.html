@@ -15,14 +15,16 @@ layout: default
 {% include centerer.html html=html %}
 
 {% capture html %}
-{% if page.website %}
-{% include social-link.html type="website" link=page.website %}
+{% assign website = page.website | default: page.homepage | default: page["personal homepage"] %}
+{% if website %}
+{% include social-link.html type="website" link=website %}
 {% endif %}
 {% if page.email %}
 {% include social-link.html type="email" link=page.email %}
 {% endif %}
-{% if page.google %}
-{% include social-link.html type="google" link=page.google %}
+{% assign scholar = page.google | default: page.scholar %}
+{% if scholar %}
+{% include social-link.html type="google" link=scholar %}
 {% endif %}
 {% if page.github %}
 {% include social-link.html type="github" link=page.github %}
@@ -39,6 +41,11 @@ layout: default
 {% endcapture %}
 
 {% include centerer.html html=html %}
+
+{% assign interests = page.research_interests | default: page.search %}
+{% if interests %}
+{% include tags.html tags=interests %}
+{% endif %}
 
 {{ content }}
 

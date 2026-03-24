@@ -1,37 +1,58 @@
+{%- assign role_type = include.type | default: "" | downcase | replace: " ", "_" -%}
 {%- assign icon = "fas fa-user" -%}
-{%- assign text = "Default Role" -%}
+{%- assign text = include.type | default: "Member" -%}
 
-{%- if include.type == "pi" -%}
+{%- if role_type == "pi" -%}
 {%- assign icon = "fas fa-microscope" -%}
 {%- assign text = "Principal Investigator" -%}
 {%- endif -%}
 
-{%- if include.type == "postdoc" -%}
+{%- if role_type == "professor" -%}
+{%- assign icon = "fas fa-chalkboard-teacher" -%}
+{%- assign text = "Professor" -%}
+{%- endif -%}
+
+{%- if role_type == "postdoc" -%}
 {%- assign icon = "fas fa-glasses" -%}
 {%- assign text = "Postdoctoral Researcher" -%}
 {%- endif -%}
 
-{%- if include.type == "phd" -%}
+{%- if role_type == "phd" -%}
 {%- assign icon = "fas fa-graduation-cap" -%}
 {%- assign text = "PhD Student" -%}
 {%- endif -%}
 
-{%- if include.type == "phd_g" -%}
+{%- if role_type == "phd_g" -%}
 {%- assign icon = "fas fa-graduation-cap" -%}
 {%- assign text = "PhD (graduated)" -%}
 {%- endif -%}
 
-{%- if include.type == "undergrad" -%}
+{%- if role_type == "graduate_student" -%}
+{%- assign icon = "fas fa-user-graduate" -%}
+{%- assign text = "Graduate Student" -%}
+{%- endif -%}
+
+{%- if role_type == "master" -%}
+{%- assign icon = "fas fa-user-graduate" -%}
+{%- assign text = "Master Student" -%}
+{%- endif -%}
+
+{%- if role_type == "undergrad" -%}
 {%- assign icon = "fas fa-user-graduate" -%}
 {%- assign text = "Undergraduate Student" -%}
 {%- endif -%}
 
-{%- if include.type == "programmer" -%}
+{%- if role_type == "undergraduate_student" -%}
+{%- assign icon = "fas fa-user-graduate" -%}
+{%- assign text = "Undergraduate Student" -%}
+{%- endif -%}
+
+{%- if role_type == "programmer" -%}
 {%- assign icon = "fas fa-code" -%}
 {%- assign text = "Programmer" -%}
 {%- endif -%}
 
-{%- if include.type == "mascot" -%}
+{%- if role_type == "mascot" -%}
 {%- assign icon = "fas fa-dog" -%}
 {%- assign text = "Mascot" -%}
 {%- endif -%}

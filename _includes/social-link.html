@@ -22,7 +22,10 @@
 {%- if include.type == "google" -%}
 {%- assign icon = "fab fa-google" -%}
 {%- assign text = "Google Scholar" -%}
-{%- assign link = include.link | default: site.google | default: "" | prepend: "https://scholar.google.com/citations?hl=en&user=" -%}
+{%- assign link = include.link | default: site.google | default: "" -%}
+{%- unless link contains "http" -%}
+{%- assign link = link | prepend: "https://scholar.google.com/citations?hl=en&user=" -%}
+{%- endunless -%}
 {%- endif -%}
 
 {%- if include.type == "github" -%}
