@@ -10,6 +10,8 @@
 {% for paper in yeargroup.items %}
 
 {% assign authors = paper.authors | join: ", " %}
+{% assign primary_link = paper.page | default: paper.link %}
+{% assign extra_links = paper["extra-links"] %}
 
 {%- capture details -%}
 {{- paper.publisher -}}
@@ -22,9 +24,14 @@
 {% endcapture %}
 
 {% capture extralinks %}
-{% if paper.extra-links.size > 0 %}
+{% if paper.page %}
 <div>
-  {%- for link in paper.extra-links -%}
+  {% include paper-link.html type="website" link=paper.page text="Project Page" %}
+</div>
+{% endif %}
+{% if extra_links and extra_links.size > 0 %}
+<div>
+  {%- for link in extra_links -%}
   {% include paper-link.html type=link.type link=link.link text=link.text %}
   {%- endfor -%}
 </div>
@@ -35,7 +42,7 @@
   include card.html
   size="small"
   image=paper.image
-  link=paper.link
+  link=primary_link
   heading=paper.title
   truncate=2
   row1=authors

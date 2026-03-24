@@ -4,7 +4,18 @@ title: Research
 
 # <i class="fas fa-microscope"></i>Research
 
-Even with this excellent website template, this is the most difficult section of the website to create initially.  It requires 
-extracting our publications into **yet another format**.  While we work on creating this part of the website so that we have 
-a unified list of publications on the web that is (hopefully) easy to maintain --- you might find an unofficial list on 
-[Rob's Google Scholar page](https://scholar.google.com/citations?user=H36hOqEAAAAJ&hl=en).
+This page is the central index for papers and projects from the lab. Each card can now point either to the publisher/preprint link or to an internal project page under `/research/<slug>/`, which is useful for papers that need their own homepage with videos, figures, code, data, and a BibTeX block.
+
+<!-- section break -->
+
+## Search
+
+Use the search box below to filter publications by title, author, venue, or keywords.
+
+{% include card-search.html subject="papers and projects" %}
+
+<!-- section break -->
+
+## Papers And Projects
+
+{% include research-list.html %}

@@ -1,0 +1,193 @@
+<html>
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    <main class="project_page">
+      <section class="project_hero">
+        <div class="project_shell project_shell_hero">
+          <div class="project_intro">
+            {% if page.project_badge %}
+            <p class="project_badge">{{ page.project_badge }}</p>
+            {% endif %}
+
+            <h1>{{ page.title }}</h1>
+
+            {% if page.subtitle %}
+            <p class="project_subtitle">{{ page.subtitle }}</p>
+            {% endif %}
+
+            {% if page.authors %}
+            <div class="project_authors">
+              {% for author in page.authors %}
+              <span class="project_author">
+                {% if author.url %}
+                <a href="{{ author.url }}">{{ author.name }}</a>
+                {% else %}
+                {{ author.name }}
+                {% endif %}
+                {% if author.affiliation %}
+                <span class="project_author_affiliation">{{ author.affiliation }}</span>
+                {% endif %}
+              </span>
+              {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if page.venue or page.year %}
+            <p class="project_venue">
+              {{ page.venue }}
+              {% if page.venue and page.year %} · {% endif %}
+              {{ page.year }}
+            </p>
+            {% endif %}
+
+            {% if page.links %}
+            <div class="project_links">
+              {% for link in page.links %}
+              <a class="project_button" href="{{ link.url }}">
+                {% if link.icon %}
+                <i class="{{ link.icon }}"></i>
+                {% endif %}
+                <span>{{ link.label }}</span>
+              </a>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+
+          {% if page.teaser %}
+          <div class="project_media">
+            <img src="{{ page.teaser | relative_url }}" alt="{{ page.title }} teaser image" />
+          </div>
+          {% endif %}
+        </div>
+      </section>
+
+      <section class="project_section">
+        <div class="project_shell">
+          {% if page.abstract %}
+          <div class="project_panel">
+            <h2>Abstract</h2>
+            <p>{{ page.abstract }}</p>
+          </div>
+          {% endif %}
+
+          {% if page.video_embed %}
+          <div class="project_panel">
+            <h2>Video</h2>
+            <div class="project_video_frame">
+              <iframe
+                src="{{ page.video_embed }}"
+                title="{{ page.title }} video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+          {% endif %}
+
+          {% if page.video_carousel %}
+          <div class="project_panel">
+            <div class="project_panel_header">
+              <h2>Video Gallery</h2>
+              <div class="project_carousel_controls">
+                <button class="project_carousel_button" type="button" data-carousel-prev aria-label="Previous video">
+                  <i class="fas fa-arrow-left"></i>
+                </button>
+                <button class="project_carousel_button" type="button" data-carousel-next aria-label="Next video">
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+            <div class="project_carousel" data-carousel>
+              {% for item in page.video_carousel %}
+              <article class="project_carousel_item{% if forloop.first %} is-active{% endif %}" data-carousel-item>
+                <div class="project_video_frame">
+                  {% if item.embed %}
+                  <iframe
+                    src="{{ item.embed }}"
+                    title="{{ item.title | default: page.title }}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                  </iframe>
+                  {% elsif item.mp4 %}
+                  <video controls playsinline preload="metadata">
+                    <source src="{{ item.mp4 | relative_url }}" type="video/mp4" />
+                  </video>
+                  {% endif %}
+                </div>
+                {% if item.title or item.caption %}
+                <div class="project_media_caption">
+                  {% if item.title %}
+                  <h3>{{ item.title }}</h3>
+                  {% endif %}
+                  {% if item.caption %}
+                  <p>{{ item.caption }}</p>
+                  {% endif %}
+                </div>
+                {% endif %}
+              </article>
+              {% endfor %}
+            </div>
+            {% if page.video_carousel.size > 1 %}
+            <div class="project_carousel_dots" data-carousel-dots>
+              {% for item in page.video_carousel %}
+              <button
+                class="project_carousel_dot{% if forloop.first %} is-active{% endif %}"
+                type="button"
+                data-carousel-dot="{{ forloop.index0 }}"
+                aria-label="Go to video {{ forloop.index }}">
+              </button>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+
+          {{ content }}
+
+          {% if page.citation %}
+          <div class="project_panel">
+            <div class="project_panel_header">
+              <h2>Citation</h2>
+              <button class="project_copy_button" type="button" data-copy-target="project-citation">
+                <i class="far fa-copy"></i>
+                <span>Copy BibTeX</span>
+              </button>
+            </div>
+            <pre class="project_citation"><code id="project-citation">{{ page.citation }}</code></pre>
+          </div>
+          {% endif %}
+
+          {% if page.related_works %}
+          <div class="project_panel">
+            <div class="project_panel_header">
+              <h2>Related Works</h2>
+              <button class="project_dropdown_toggle" type="button" data-dropdown-toggle aria-expanded="false">
+                <span>Show Related Works</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="project_related_works" data-dropdown-panel hidden>
+              {% for work in page.related_works %}
+              <a class="project_related_item" href="{{ work.url }}">
+                <strong>{{ work.title }}</strong>
+                {% if work.meta %}
+                <span>{{ work.meta }}</span>
+                {% endif %}
+                {% if work.description %}
+                <p>{{ work.description }}</p>
+                {% endif %}
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </section>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

@@ -25,6 +25,11 @@
 # Url to a striking image. Use a figure from your paper, or if there are none,
 # use a journal logo or issue cover.
 
+# page:
+# Optional internal project page url, such as /research/my-paper/. If provided,
+# the research card will link to this page instead of jumping straight to the
+# publisher or preprint website.
+
 # tags:
 # A list of key topics/themes of your paper. Aim for 2 to 5. look at other
 # papers and try to use similar tags.
