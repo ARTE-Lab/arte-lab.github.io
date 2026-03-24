@@ -7,7 +7,7 @@ search:
 role: "professor"
 scholar: "https://scholar.google.com/citations?hl=zh-CN&user=kCy8JG8AAAAJ"
 group: "current"
-image: "/_members/pictures/Tong-Zhang.jpg"
+image: "/assets/cv/Tong_Zhang.jpg"
 email: "tongzhang@ucas.ac.cn"
 personal homepage: "https://people.ucas.ac.cn/~0081363"
 ---
