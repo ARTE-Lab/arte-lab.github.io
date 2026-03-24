@@ -1,10 +1,10 @@
 ---
-title: "Example Project Page"
-subtitle: "A reusable project-page skeleton for papers, demos, and datasets"
-description: "Template page for individual research project homepages on the ARTE Lab website."
-project_badge: "Project Page Template"
+title: "Example Project Page: A Reusable Homepage For Research Outputs"
+subtitle: "An example paper homepage for demos, videos, BibTeX, and related work sections"
+description: "Example paper page showing how ARTE Lab can host individual project homepages inside the research section."
+project_badge: "Example Paper"
 teaser: images/network.jpg
-venue: "Replace With Venue or Project Type"
+venue: "ARTE Lab Demo"
 year: 2026
 authors:
   - name: "First Author"
@@ -51,7 +51,7 @@ citation: |
 ## How To Reuse This Page
 
 1. Copy this file into `_projects/` and rename it, for example `_projects/my-new-paper.md`.
-2. Update the front matter fields at the top: title, teaser, authors, links, abstract, and citation.
+2. Update the front matter fields at the top: title, teaser, authors, links, abstract, videos, and citation.
 3. Put project assets into a stable place such as `images/projects/my-new-paper/`.
 4. Add `page: /research/my-new-paper/` to the corresponding entry in [`_data/research-input.yml`](/home/npy/arte-lab.github.io/_data/research-input.yml) so the research card opens this page.
 
