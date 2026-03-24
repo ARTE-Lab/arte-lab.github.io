@@ -48,15 +48,7 @@ is a list of lab alumni (if you feel you're missing from the list and would like
 
 {% include centerer.html html=html %}
 
----
-title: Team
-redirect_from:
-- /lab-members
-- /alums
-- /mascots
-- /staff
-- /trainees
----
+
 
 # <i class="fas fa-users"></i>
 
