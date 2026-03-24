@@ -6,6 +6,10 @@ Spend less time reinventing the wheel, and more time running your lab.
 
 [**⭐ See the demo ⭐**](https://greenelab.github.io/lab-website-template/)
 
+## ARTE Lab Notes
+
+- Project-page workflow for this repo: [`HOW_TO_ADD_PAPER_AND_PROJECT.md`](/home/npy/arte-lab.github.io/HOW_TO_ADD_PAPER_AND_PROJECT.md)
+
 ## Target audience
 
 People who run labs and have some familiarity with GitHub and web technologies.
