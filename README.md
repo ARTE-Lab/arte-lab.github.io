@@ -1,14 +1,24 @@
-<h1 align="center">COMBINE-lab website</h1>
-<p align="center"><img height="200" src="https://raw.githubusercontent.com/greenelab/lab-website-template/main/icons/share-thumbnail.jpg?raw=true" alt="COMBINE-lab website"></p>
+# ARTE Lab Website
 
-An easy-to-use, flexible website template for [labs](https://www.greenelab.com/), with automatic citations, GitHub tag imports, pre-built components, and more.
-Spend less time reinventing the wheel, and more time running your lab.
+This repository contains the source code for the ARTE Lab GitHub Pages website.
 
-[**⭐ See the demo ⭐**](https://greenelab.github.io/lab-website-template/)
+ARTE Lab stands for Autonomous Representation of Temps & Espace. This site is built with Jekyll and is used to host:
+
+- the lab homepage
+- team pages
+- research cards
+- standalone paper or project pages under `/research/<slug>/`
+- news, blog, and resource pages
+
+The main project-page workflow for this repo is documented here:
+
+- [HOW_TO_ADD_PAPER_AND_PROJECT.md](HOW_TO_ADD_PAPER_AND_PROJECT.md)
 
 ## ARTE Lab Notes
 
-- Project-page workflow for this repo: [`HOW_TO_ADD_PAPER_AND_PROJECT.md`](/home/npy/arte-lab.github.io/HOW_TO_ADD_PAPER_AND_PROJECT.md)
+- Site URL: `https://arte-lab.github.io/`
+- Research pages can have both a card and a standalone project homepage
+- New paper/project instructions: [HOW_TO_ADD_PAPER_AND_PROJECT.md](HOW_TO_ADD_PAPER_AND_PROJECT.md)
 
 ## Target audience
 
@@ -180,7 +190,7 @@ With these, when you open or update a PR, Netlify will post a comment with a lin
 2. [Install RubyGems](https://rubygems.org/pages/download)
 3. Open your command line
 4. [Install Jekyll](https://jekyllrb.com/) by running `gem install bundler jekyll`
-5. Go to the folder where you cloned your site, eg `cd lab-website-template`
+5. Go to the folder where you cloned this repo, for example `cd arte-lab.github.io`
 6. Start the site by running `./start.sh`
 7. The site should automatically open in a browser.
    Any changes you make should automatically rebuild the site and refresh the page, except for changes to `_config.yml` which require re-running the start script.
@@ -195,7 +205,7 @@ With these, when you open or update a PR, Netlify will post a comment with a lin
 ### Using the pre-built components
 
 The various `index.md` files in this repo aim to list and document all of the included components.
-See their source code to see how to write the components into your site, and see the [template demo](https://greenelab.github.io/lab-website-template) to see what the components look like in action.
+See the source of the existing pages in this repo to understand how each component is used in the ARTE Lab website.
 
 ### Automatic Citations
 
@@ -280,6 +290,6 @@ If you need help, first make sure you search this readme and look through the va
 Also, we've tried to include comments in all files where we think they're needed, especially where users are likely to want to customize things.
 Look for file names relevant to your question, and you may find that you can achieve what you want just by opening them up and editing them.
 
-If you still need help, or if you have a suggestion for how to make this template easier to use for novices, please [post a new issue on this repository](https://github.com/greenelab/lab-website-template/issues).
+If you still need help, open an issue in this repository or document the missing workflow in the repo notes.
 
-<p align="center"><img height="200" src="https://user-images.githubusercontent.com/8326331/96628877-d1658e00-12e0-11eb-894c-7bb0d7f07632.png" alt="COMBINE-lab website"></p>
+<p align="center"><img height="200" src="icons/share-thumbnail.jpg" alt="ARTE Lab website"></p>

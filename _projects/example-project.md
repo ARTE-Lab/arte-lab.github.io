@@ -53,7 +53,7 @@ citation: |
 1. Copy this file into `_projects/` and rename it, for example `_projects/my-new-paper.md`.
 2. Update the front matter fields at the top: title, teaser, authors, links, abstract, videos, and citation.
 3. Put project assets into a stable place such as `images/projects/my-new-paper/`.
-4. Add `page: /research/my-new-paper/` to the corresponding entry in [`_data/research-input.yml`](/home/npy/arte-lab.github.io/_data/research-input.yml) so the research card opens this page.
+4. Add `page: /research/my-new-paper/` to the corresponding entry in [`_data/research-input.yml`](../_data/research-input.yml) so the research card opens this page.
 
 ## Suggested Sections
 

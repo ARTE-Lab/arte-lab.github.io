@@ -251,8 +251,7 @@ Minimum needed for the card and page to work well:
 
 You can use these existing files as references:
 
-- [`_projects/example-project.md`](/home/npy/arte-lab.github.io/_projects/example-project.md)
-- [`_data/research-input.yml`](/home/npy/arte-lab.github.io/_data/research-input.yml)
-- [`_data/research-output.yml`](/home/npy/arte-lab.github.io/_data/research-output.yml)
-- [`_layouts/project.html`](/home/npy/arte-lab.github.io/_layouts/project.html)
-
+- [`_projects/example-project.md`](_projects/example-project.md)
+- [`_data/research-input.yml`](_data/research-input.yml)
+- [`_data/research-output.yml`](_data/research-output.yml)
+- [`_layouts/project.html`](_layouts/project.html)
