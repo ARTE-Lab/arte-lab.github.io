@@ -36,7 +36,7 @@ Our lab comprises some of the finest researchers, including lecturers, postgradu
 ## Alumni
 
 
-We are incredibly proud of all of the COMBINE-lab alumni who have passed through the lab, for whatever period of time they were with us. Below
+We are incredibly proud of all of the ARTE Lab alumni who have passed through the lab, for whatever period of time they were with us. Below
 is a list of lab alumni (if you feel you're missing from the list and would like to be added, please e-mail us):
 
 
