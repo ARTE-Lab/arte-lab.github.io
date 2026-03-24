@@ -19,7 +19,7 @@ We are based in Beijing, with activities spanning both the Haidian research offi
 <style type="text/css">
    span.codedirection { unicode-bidi:bidi-override; direction: rtl; }
 </style>
-<span class="codedirection">tongzhang@ucas.ac.cn</span>
+<span class="codedirection">nc.sacu@gnahzgnot</span>
 {:.center}
 
 ## Locations
