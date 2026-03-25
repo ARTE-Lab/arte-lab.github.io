@@ -1,6 +1,14 @@
 <html>
   {% include head.html %}
-  <body>
+  <body class="{% if page.url == '/' %}is-homepage{% endif %}">
+    {% if page.url == '/' %}
+    <div class="home_logo_overlay" aria-hidden="true">
+      <div class="home_logo_stage">
+        <img class="home_logo_image" src="{{ 'assets/cv/logo.jpg' | relative_url }}" alt="" />
+        <span class="home_logo_flow"></span>
+      </div>
+    </div>
+    {% endif %}
     {% include header.html %}
     <main>
       {% include content.html content=content %}
