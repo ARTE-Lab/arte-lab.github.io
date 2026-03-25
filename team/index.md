@@ -22,6 +22,7 @@ Our lab comprises some of the finest researchers, including lecturers, postgradu
 {% include team-list.html role="professor" group="current" %}
 
 {% endcapture %}
+{% include centerer.html html=html %}
 
 # Graduate students
 {% capture html %}
