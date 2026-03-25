@@ -1,6 +1,7 @@
 <html>
   {% include head.html %}
-  {% assign is_homepage = page.url == '/' or page.url == '/index.html' or page.name == 'index.md' or page.path == 'index.md' %}
+  {% assign is_root_index = page.dir == '/' and page.name == 'index.md' %}
+  {% assign is_homepage = page.url == '/' or page.url == '/index.html' or is_root_index %}
   <body class="{% if is_homepage %}is-homepage{% endif %}">
     {% if is_homepage %}
     <div class="home_logo_overlay" aria-hidden="true">
