@@ -1,7 +1,7 @@
 <html>
   {% include head.html %}
-  <body class="{% if page.url == '/' %}is-homepage{% endif %}">
-    {% if page.url == '/' %}
+  <body class="{% if page.url == '/' or page.url == '/index.html' %}is-homepage{% endif %}">
+    {% if page.url == '/' or page.url == '/index.html' %}
     <div class="home_logo_overlay" aria-hidden="true">
       <div class="home_logo_stage">
         <img class="home_logo_image" src="{{ 'assets/cv/logo.jpg' | relative_url }}" alt="" />

@@ -34,7 +34,7 @@ body.is-homepage {
     display: block;
     width: 100%;
     height: auto;
-    opacity: 0.22;
+    opacity: 0.3;
     filter: blur(1.6px) saturate(1.05) contrast(1.04);
   }
 
@@ -50,7 +50,7 @@ body.is-homepage {
     );
     mix-blend-mode: screen;
     filter: blur(10px);
-    opacity: 0.35;
+    opacity: 0.45;
     transform: translateX(-30%) skewX(-8deg);
     animation: logo_flow 7s ease-in-out infinite;
   }
@@ -79,7 +79,7 @@ body.is-homepage {
     }
 
     .home_logo_image {
-      opacity: 0.18;
+      opacity: 0.24;
     }
   }
 }
