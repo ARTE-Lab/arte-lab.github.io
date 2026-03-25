@@ -1,12 +1,10 @@
 <html>
   {% include head.html %}
-  {% assign is_root_index = page.dir == '/' and page.name == 'index.md' %}
-  {% assign is_homepage = page.url == '/' or page.url == '/index.html' or is_root_index %}
-  <body class="{% if is_homepage %}is-homepage{% endif %}">
-    {% if is_homepage %}
+  <body class="{% if page.url == '/' %}is-homepage{% endif %}">
+    {% if page.url == '/' %}
     <div class="home_logo_overlay" aria-hidden="true">
       <div class="home_logo_stage">
-        <img class="home_logo_image" src="{{ 'assets/cv/logo.jpg' | relative_url }}" alt="" />
+        <img class="home_logo_image" src="{{ 'assets/cv/logo_without_bg.png' | relative_url }}" alt="" />
         <span class="home_logo_flow"></span>
       </div>
     </div>
