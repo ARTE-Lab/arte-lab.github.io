@@ -10,6 +10,7 @@ scholar: "https://scholar.google.com/citations?user=9g0qyEQAAAAJ&hl=zh-CN"
 image: "/assets/cv/npy.jpg"
 email: "213222106@seu.edu.cn"
 group: "current"
+personal homepage: "[https://people.ucas.ac.cn/~0081363](https://ni-a.github.io/)"
 ---
 
 I studied at Southeast University until 2026 and joined the ARTE Lab in spring 2026.
