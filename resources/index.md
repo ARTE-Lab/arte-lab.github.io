@@ -2,9 +2,10 @@
 title: Resources
 ---
 
+<!--
 # <i class="fas fa-tools"></i>Resources
 
-<!-- section break -->
+[section break]
 
 ## Software
 
@@ -28,3 +29,4 @@ by members of the COMBINE-lab in conjunction with others.
 {% endcapture %}
 
 {% include centerer.html html=html %}
+-->

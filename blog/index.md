@@ -2,6 +2,7 @@
 title: Blog
 ---
 
+<!--
 # <i class="fas fa-feather-alt"></i>Blog
 
 
@@ -14,3 +15,4 @@ Older blog posts can be found on the [wordpress site](http://robpatro.com/blog/)
 {% include blog-list.html %}
 
 {% include centerer.html html=html %}
+-->
