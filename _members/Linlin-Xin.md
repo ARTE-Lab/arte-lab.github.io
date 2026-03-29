@@ -6,6 +6,7 @@ search:
 role: "Graduate student"
 image: "/assets/cv/Linlin_Xin.jpg"
 email: "xinlinlin22@mails.ucas.ac.cn"
+scholar: "https://scholar.google.com/citations?hl=zh-CN&user=HF1igfcAAAAJ"
 group: "current"
 ---
  
