@@ -3,7 +3,7 @@
 # site-wide variables
 title: ARTE Lab
 email: tongzhang@ucas.ac.cn
-description: ARTE Lab at UCAS (LAMP): Autonomous Representation of Temps and Espace, with research in world models, spatial intelligence, and autonomous driving.
+description: "ARTE Lab at UCAS (LAMP): Autonomous Representation of Temps and Espace, with research in world models, spatial intelligence, and autonomous driving."
 url: "https://arte-lab.github.io"
 #google: Rob Patro # default name to search on Google Scholar
 github: https://arte-lab.github.io
@@ -27,7 +27,7 @@ defaults:
   - scope:
       path: ""
     values:
-      description: ARTE Lab at UCAS (LAMP): Autonomous Representation of Temps and Espace, with research in world models, spatial intelligence, and autonomous driving. # description that will show under search engine results
+      description: "ARTE Lab at UCAS (LAMP): Autonomous Representation of Temps and Espace, with research in world models, spatial intelligence, and autonomous driving." # description that will show under search engine results
       background: images/test-tube.jpg # background image in header and footer
       layout: default
   # markdown files in /_members
