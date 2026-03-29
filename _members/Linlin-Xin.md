@@ -1,5 +1,5 @@
 ---
-title: Linlin Xin (辛林霖)
+title: "Linlin Xin (辛林霖)"
 search:
   - "3D Computer Vision“
   - "World Models"
