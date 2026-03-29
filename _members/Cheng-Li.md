@@ -1,5 +1,5 @@
 ---
-title: "Cheng Li"(李程)
+title: "Cheng Li(李程)"
 research_interests:
   - "Spatial Intelligence"
   - "Autonomous Driving"
