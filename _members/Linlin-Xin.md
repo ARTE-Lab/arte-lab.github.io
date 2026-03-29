@@ -1,7 +1,7 @@
 ---
 title: "Linlin Xin (辛林霖)"
 search:
-  - "3D Computer Vision“
+  - "3D Computer Vision"
   - "World Models"
 role: "Graduate student"
 image: "/assets/cv/Linlin_Xin.jpg"
