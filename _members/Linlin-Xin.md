@@ -1,6 +1,6 @@
 ---
 title: Linlin Xin (辛林霖)
-research_interests:
+search:
   - "3D Computer Vision“
   - "World Models"
 role: "Graduate student"
