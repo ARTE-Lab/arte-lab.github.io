@@ -1,18 +1,23 @@
 {% capture title%}
 {{ site.title }}{% if page.title %} - {% endif %}{{ page.title }}
 {% endcapture %}
+{% assign canonical_url = page.url | absolute_url %}
+{% assign share_image = 'icons/share-thumbnail.jpg' | absolute_url %}
 
 <!-- https://metatags.io/ -->
 <meta name="title" content="{{ title }}" />
 <meta name="description" content="{{ page.description }}" />
+<link rel="canonical" href="{{ canonical_url }}" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="{{ site.location }}" />
+<meta property="og:url" content="{{ canonical_url }}" />
 <meta property="og:title" content="{{ title }}" />
 <meta property="og:description" content="{{ page.description }}" />
+<meta property="og:image" content="{{ share_image }}" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="{{ site.location }}" />
+<meta property="twitter:url" content="{{ canonical_url }}" />
 <meta property="twitter:title" content="{{ title }}" />
 <meta property="twitter:description" content="{{ page.description }}" />
+<meta property="twitter:image" content="{{ share_image }}" />
 
 <!-- RSS -->
 <link
