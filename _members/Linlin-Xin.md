@@ -4,9 +4,9 @@ search:
   - "3D Computer Vision"
   - "World Models"
 role: "Graduate student"
+scholar: "https://scholar.google.com/citations?hl=zh-CN&user=HF1igfcAAAAJ"
 image: "/assets/cv/Linlin_Xin.jpg"
 email: "xinlinlin22@mails.ucas.ac.cn"
-scholar: "https://scholar.google.com/citations?hl=zh-CN&user=HF1igfcAAAAJ"
 group: "current"
 ---
  
