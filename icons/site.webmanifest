@@ -3,9 +3,9 @@
     "short_name": "",
     "icons": [
         {
-            "src": "icons/android.png",
-            "sizes": "512x512",
-            "type": "image/png"
+            "src": "/assets/cv/logo.jpg?v=20260330",
+            "sizes": "2347x1280",
+            "type": "image/jpeg"
         }
     ],
     "theme_color": "#ffffff",
