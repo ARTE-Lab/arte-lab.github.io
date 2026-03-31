@@ -12,7 +12,7 @@ email: "tongzhang@ucas.ac.cn"
 personal homepage: "https://people.ucas.ac.cn/~0081363"
 ---
 
-I am a tenure-track Assistant Professor at the University of Chinese Academy of Sciences (UCAS). Before joining UCAS, I spent 5 wonderful years at EPFL, working closely with [Prof. Sabine Süsstrunk](https://people.epfl.ch/sabine.susstrunk), [Dr. Mathieu Salzmann](https://people.epfl.ch/mathieu.salzmann) and talented students at [IVRL](https://www.epfl.ch/labs/ivrl/). 
+I am a tenure-track Assistant Professor at the University of Chinese Academy of Sciences (UCAS). Before joining UCAS, I spent 5 wonderful years at EPFL, working closely with [Prof. Sabine Süsstrunk](https://people.epfl.ch/sabine.susstrunk), [Dr. Mathieu Salzmann](https://people.epfl.ch/mathieu.salzmann) and talented students at [IVRL](https://www.epfl.ch/labs/ivrl/), where it is a home to me. 
 
 I obtained my Ph.D. from the Australian National University (ANU) in 2020 under the supervision of [Prof. Richard Hartley](https://users.cecs.anu.edu.au/~hartley/), [Prof. Faith Porikli](https://people.cecs.anu.edu.au/~porikli/), [Prof. Mehrtash Harandi](https://people.cecs.anu.edu.au/~mharandi/), and [Prof. Hongdong Li](https://users.cecs.anu.edu.au/~hongdong/). After submitting my thesis, I continued working on a semantic geo-localization project in collaboration with several Ph.D. students at ANU.
 
