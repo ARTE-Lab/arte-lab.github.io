@@ -1,6 +1,6 @@
 {% assign papers = site.data.research-output %}
 {% assign papers = papers | sort: "date" | reverse %}
-{% assign byyear = papers | group_by_exp: "post", "post.date | date: '%Y'" | sort: "name" | reverse %}
+{% assign byyear = papers | group_by_exp: "post", "post.date | append: '' | slice: 0, 4" | sort: "name" | reverse %}
 
 {% for yeargroup in byyear %}
 
@@ -16,7 +16,7 @@
 {%- capture details -%}
 {{- paper.publisher -}}
 &nbsp; · &nbsp;
-{{- paper.date | date: "%Y" -}}
+{{- paper.date | append: '' | slice: 0, 4 -}}
 {%- endcapture -%}
 
 {% capture tags %}
