@@ -6,7 +6,6 @@ role: "Graduate student"
 scholar: "https://scholar.google.com/citations?user=Y1TtPL8AAAAJ&hl=en"
 image: "/assets/cv/MingruiWu.jpg"
 email: "wumingrui20@mails.ucas.ac.cn"
-Homepage:"https://mingrui-wu.github.io"
 group: "current"
 ---
  
