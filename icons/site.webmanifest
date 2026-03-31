@@ -3,8 +3,8 @@
     "short_name": "",
     "icons": [
         {
-            "src": "/assets/cv/logo.jpg?v=20260330",
-            "sizes": "2347x1280",
+            "src": "/assets/cv/new_logo.jpg?v=20260331",
+            "sizes": "2816x1536",
             "type": "image/jpeg"
         }
     ],
