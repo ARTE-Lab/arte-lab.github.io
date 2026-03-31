@@ -1,18 +1,23 @@
-- title: "Example Project Page: A Reusable Homepage For Research Outputs"
+- title: "From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs"
   authors:
-    - First Author
-    - Second Author
-  publisher: ARTE Lab Demo
-  date: '2026-03-24'
-  link: https://arte-lab.github.io/research/example-project/
-  id: example:arte-project-page
+    - Mingrui Wu
+    - Zhaozhi Wang
+    - Fangjinhua Wang
+    - Jiaolong Yang
+    - Marc Pollefeys
+    - Tong Zhang
+  publisher: CVPR
+  date: '2026'
+  link: https://arxiv.org/abs/2512.19683
+  id: wu2026openbench
   page: /research/example-project/
-  image: images/network.jpg
+  image: images/openbench-x1.png
   tags:
-    - project page
-    - academic website
-    - lab template
+    - MLLM
+    - spatial reasoning
+    - open-world benchmark
+    - CVPR 2026
   extra-links:
-    - type: source
-      link: https://github.com/ARTE-Lab/arte-lab.github.io
-      text: Website Source
+    - type: website
+      link: https://mingrui-wu.github.io/openbench/
+      text: Project Page
