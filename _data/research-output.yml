@@ -71,3 +71,27 @@
     - type: website
       link: https://openreview.net/forum?id=WQYHbr36Fo
       text: Project Page
+
+- title: "Mitigating Object Dependencies: Improving Point Cloud Self-Supervised Learning through Object Exchange"
+  authors:
+    - Yanhao Wu
+    - Tong Zhang
+    - Wei Ke
+    - Congpei Qiu
+    - Sabine Süsstrunk
+    - Mathieu Salzmann
+  publisher: CVPR
+  date: '2024'
+  link: https://openaccess.thecvf.com/content/CVPR2024/html/Wu_Mitigating_Object_Dependencies_Improving_Point_Cloud_Self-Supervised_Learning_through_Object_CVPR_2024_paper.html
+  id: wu2024objectexchange
+  page: /research/mitigating-object-dependencies/
+  image: assets/cv/mitigating-object-dependencies.png
+  tags:
+    - point cloud
+    - self-supervised learning
+    - object exchange
+    - CVPR 2024
+  extra-links:
+    - type: website
+      link: https://openaccess.thecvf.com/content/CVPR2024/html/Wu_Mitigating_Object_Dependencies_Improving_Point_Cloud_Self-Supervised_Learning_through_Object_CVPR_2024_paper.html
+      text: Project Page

@@ -32,7 +32,13 @@
 {% if extra_links and extra_links.size > 0 %}
 <div>
   {%- for link in extra_links -%}
+  {% assign is_duplicate_project_page = false %}
+  {% if paper.page and link.type == "website" and link.text == "Project Page" %}
+  {% assign is_duplicate_project_page = true %}
+  {% endif %}
+  {% unless is_duplicate_project_page %}
   {% include paper-link.html type=link.type link=link.link text=link.text %}
+  {% endunless %}
   {%- endfor -%}
 </div>
 {% endif %}
