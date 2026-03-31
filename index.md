@@ -5,7 +5,7 @@ title: ARTE Lab
 # ARTE Group  
 Autonomous Representation de Temps et Espace  
 
-The ARTE Group is a research group affiliated with the [LAMP Laboratory](http://lamp.ucas.ac.cn) at the University of Chinese Academy of Sciences (UCAS).
+The ARTE Group is a research group affiliated with the [LAMP Laboratory](http://lamp.ucas.ac.cn) led by Professor Qixiang Ye (https://people.ucas.ac.cn/~qxye?language=en) at the University of Chinese Academy of Sciences (UCAS).
 
 ## About
 
@@ -24,4 +24,4 @@ We are exploring representations that can autonomously adapt to the continuous e
 
 ## Contact
 
-For collaboration and research inquiries, please contact us through the laboratory or our project repositories on GitHub.   
+For collaboration and research inquiries, please contact us through the laboratory (tongzhang@ucas.ac.cn) or our project repositories on GitHub.   
