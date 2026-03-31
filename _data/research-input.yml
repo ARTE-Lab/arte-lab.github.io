@@ -71,10 +71,6 @@
     - representation learning
     - data augmentation
     - ICLR 2024
-  extra-links:
-    - type: website
-      link: https://openreview.net/forum?id=WQYHbr36Fo
-      text: Project Page
 
 - id: wu2024objectexchange
   title: "Mitigating Object Dependencies: Improving Point Cloud Self-Supervised Learning through Object Exchange"
@@ -95,7 +91,132 @@
     - self-supervised learning
     - object exchange
     - CVPR 2024
+
+- id: wu2025umgen
+  title: "Generating Multimodal Driving Scenes via Next-Scene Prediction"
+  authors:
+    - "Yanhao Wu"
+    - "Haoyang Zhang"
+    - "Tianwei Lin"
+    - "Lichao Huang"
+    - "Shujie Luo"
+    - "Rui Wu"
+    - "Congpei Qiu"
+    - "Wei Ke"
+    - "Tong Zhang"
+  publisher: "CVPR"
+  date: 2025
+  link: https://openaccess.thecvf.com/content/CVPR2025/html/Wu_Generating_Multimodal_Driving_Scenes_via_Next-Scene_Prediction_CVPR_2025_paper.html
+  page: /research/umgen/
+  image: assets/cv/umgen-teaser.png
+  tags:
+    - autonomous driving
+    - scene generation
+    - multimodal prediction
+    - CVPR 2025
   extra-links:
     - type: website
-      link: https://openaccess.thecvf.com/content/CVPR2024/html/Wu_Mitigating_Object_Dependencies_Improving_Point_Cloud_Self-Supervised_Learning_through_Object_CVPR_2024_paper.html
-      text: Project Page
+      link: https://yanhaowu.github.io/UMGen/
+      text: Homepage
+
+- id: qiu2025refiningclip
+  title: "Refining CLIP's Spatial Awareness: A Visual-Centric Perspective"
+  authors:
+    - "Congpei Qiu"
+    - "Yanhao Wu"
+    - "Wei Ke"
+    - "Xiuxiu Bai"
+    - "Tong Zhang"
+  publisher: "ICLR"
+  date: 2025
+  link: https://arxiv.org/abs/2504.02328
+  page: /research/refining-clip-spatial-awareness/
+  image: assets/cv/refining-teaser.jpg
+  tags:
+    - vision-language model
+    - spatial awareness
+    - CLIP
+    - ICLR 2025
+  extra-links:
+    - type: website
+      link: https://congpeiqiu.github.io/Refining/
+      text: Homepage
+
+- id: wu2023spatiotemporal
+  title: "Spatiotemporal Self-Supervised Learning for Point Clouds in the Wild"
+  authors:
+    - "Yanhao Wu"
+    - "Tong Zhang"
+    - "Wei Ke"
+    - "Sabine Süsstrunk"
+    - "Mathieu Salzmann"
+  publisher: "CVPR"
+  date: 2023
+  link: https://openaccess.thecvf.com/content/CVPR2023/html/Wu_Spatiotemporal_Self-Supervised_Learning_for_Point_Clouds_in_the_Wild_CVPR_2023_paper.html
+  page: /research/spatiotemporal-ssl-pointclouds-wild/
+  image: assets/cv/spatiotemporal-pointclouds-wild.png
+  tags:
+    - point cloud
+    - self-supervised learning
+    - spatiotemporal learning
+    - CVPR 2023
+
+- id: zhang2022localglobal
+  title: "Leverage Your Local and Global Representations: A New Self-Supervised Learning Strategy"
+  authors:
+    - "Tong Zhang"
+    - "Congpei Qiu"
+    - "Wei Ke"
+    - "Sabine Süsstrunk"
+    - "Mathieu Salzmann"
+  publisher: "CVPR"
+  date: 2022
+  link: https://openaccess.thecvf.com/content/CVPR2022/html/Zhang_Leverage_Your_Local_and_Global_Representations_A_New_Self-Supervised_Learning_CVPR_2022_paper.html
+  page: /research/leverage-local-global-representations/
+  image: assets/cv/leverage-local-global.png
+  tags:
+    - self-supervised learning
+    - representation learning
+    - local-global learning
+    - CVPR 2022
+
+- id: qiu2023decoupling
+  title: "De-coupling and De-positioning Dense Self-supervised Learning"
+  authors:
+    - "Congpei Qiu"
+    - "Tong Zhang"
+    - "Wei Ke"
+    - "Mathieu Salzmann"
+    - "Sabine Süsstrunk"
+  publisher: "CVPR"
+  date: 2023
+  link: https://arxiv.org/abs/2303.16947
+  page: /research/decoupling-depositioning-dense-ssl/
+  image: assets/cv/decoupling-depositioning-dense-ssl.png
+  tags:
+    - dense self-supervised learning
+    - representation learning
+    - CVPR 2023
+
+- id: wang2026videoanchor
+  title: "VideoAnchor: Reinforcing Subspace-Structured Visual Cues for Coherent Visual-Spatial Reasoning"
+  authors:
+    - "Zhaozhi Wang"
+    - "Tong Zhang"
+    - "Mingyue Guo"
+    - "Yaowei Wang"
+    - "Qixiang Ye"
+  publisher: "ICLR"
+  date: 2026
+  link: https://arxiv.org/abs/2509.25151
+  page: /research/videoanchor/
+  image: assets/cv/videoanchor-teaser.png
+  tags:
+    - visual-spatial reasoning
+    - video understanding
+    - subspace cues
+    - ICLR 2026
+  extra-links:
+    - type: website
+      link: https://github.com/feufhd/VideoAnchor
+      text: Homepage
