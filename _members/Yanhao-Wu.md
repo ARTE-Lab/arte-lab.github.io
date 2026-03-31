@@ -3,7 +3,7 @@ title: "Yanhao Wu"
 search:
   - "Autonomous Driving"
   - "Self-supervised Learning"
-role: "Graduate sturdent"
+role: "Graduate student"
 group: "current"
 image: "/assets/cv/YanhaoWu.jpg"
 email: "wuyanhao@stu.xjtu.edu.cn"
