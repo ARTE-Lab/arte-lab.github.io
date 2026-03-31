@@ -5,7 +5,7 @@ search:
   - Self-supervised Learning
 role: Graduate sturdent
 group: current
-image: 
+image: /assets/cv/YanhaoWu.jpg
 email: wuyanhao@stu.xjtu.edu.cn
 github: https://yanhaowu.github.io/
 ---
