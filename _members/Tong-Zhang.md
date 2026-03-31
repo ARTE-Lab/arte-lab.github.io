@@ -12,10 +12,12 @@ email: "tongzhang@ucas.ac.cn"
 personal homepage: "https://people.ucas.ac.cn/~0081363"
 ---
 
-I am a postdoctoral researcher working in machine learning and computer vision at EPFL with Prof. Sabine Süsstrunk and Dr. Mathieu Salzmann. I obtained my Ph.D. degree from the Australian National University (ANU) in 2020 under the supervision of Prof. Richard Hartley, Prof. Faith Porikli, Prof. Mehrtash Harandi, and Prof. Hongdong Li.  After submitting my thesis, I worked on a semantic geo-localization project along with some Ph.D. students at ANU. During my Ph.D. study, I received the Best Student Paper honorable mention at ACCV 2016, the Paper Award Finalist at CVPR 2020, and the Best Poster Award at BMVC 2025.
+I am a tenure-track Assistant Professor at the University of Chinese Academy of Sciences (UCAS). Before joining UCAS, I spent 5 wonderful years at EPFL, working closely with [Prof. Sabine Süsstrunk](https://people.epfl.ch/sabine.susstrunk), [Dr. Mathieu Salzmann](https://people.epfl.ch/mathieu.salzmann) and talented students at [IVRL](https://www.epfl.ch/labs/ivrl/). 
 
-Prior to that, I received a master's degree from New York University in 2014 and a bachelor's degree from Beihang University in 2011.
+I obtained my Ph.D. from the Australian National University (ANU) in 2020 under the supervision of [Prof. Richard Hartley](https://users.cecs.anu.edu.au/~hartley/), [Prof. Faith Porikli](https://people.cecs.anu.edu.au/~porikli/), [Prof. Mehrtash Harandi](https://people.cecs.anu.edu.au/~mharandi/), and [Prof. Hongdong Li](https://users.cecs.anu.edu.au/~hongdong/). After submitting my thesis, I continued working on a semantic geo-localization project in collaboration with several Ph.D. students at ANU.
 
-Currently, my focus lies in unifying representations across different modalities to enable comprehensive interpretation of deep learning models, thereby facilitating broader applications in fields like time-series prediction and generation.
+During my past research, I received (of course, huge thanks to all my collaborators) the Best Student Paper Honorable Mention at ACCV 2016, was a Finalist for the Best Paper Award at CVPR 2020, and received the Best Poster Award at BMVC 2025.
 
-IVRL is always taking highly motivated Ph.D. students, who receive fellowships from the computer science (IC) department. We also have limited positions for self-funded visiting students.  Learn more about me at [google](https://sites.google.com/view/tong-zhang/home).
+Prior to that, I obtained a Master’s degree from New York University in 2014 and a Bachelor’s degree from Beihang University in 2011.
+
+Life is not always easy, but try to live hard at this moment.
