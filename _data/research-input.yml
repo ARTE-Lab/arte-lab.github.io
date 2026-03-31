@@ -25,3 +25,53 @@
     - type: website
       link: https://mingrui-wu.github.io/openbench/
       text: Project Page
+
+- id: wu2026aligndrive
+  title: "AlignDrive: Aligned Lateral-Longitudinal Planning for End-to-End Autonomous Driving"
+  authors:
+    - "Yanhao Wu"
+    - "Haoyang Zhang"
+    - "Fei He"
+    - "Rui Wu"
+    - "Congpei Qiu"
+    - "Liang Gao"
+    - "Wei Ke"
+    - "Tong Zhang"
+  publisher: "arXiv"
+  date: 2026
+  link: https://arxiv.org/abs/2601.01762
+  page: /research/aligndrive/
+  image: assets/cv/AlignDrive.png
+  tags:
+    - autonomous driving
+    - end-to-end planning
+    - trajectory planning
+    - arXiv 2026
+  extra-links:
+    - type: website
+      link: https://yanhaowu.github.io/AlignDrive/
+      text: Project Page
+
+- id: qiu2024mind
+  title: "Mind Your Augmentation: The Key to Decoupling Dense Self-Supervised Learning"
+  authors:
+    - "Congpei Qiu"
+    - "Tong Zhang"
+    - "Yanhao Wu"
+    - "Wei Ke"
+    - "Mathieu Salzmann"
+    - "Sabine Süsstrunk"
+  publisher: "ICLR"
+  date: 2024
+  link: https://openreview.net/forum?id=WQYHbr36Fo
+  page: /research/mind-your-augmentation/
+  image: assets/cv/mind-your-augmentation.png
+  tags:
+    - dense self-supervised learning
+    - representation learning
+    - data augmentation
+    - ICLR 2024
+  extra-links:
+    - type: website
+      link: https://openreview.net/forum?id=WQYHbr36Fo
+      text: Project Page
