@@ -58,11 +58,14 @@ layout: default
 {{ content }}
 
 {% assign names = "" | split: ',' %}
+{% assign english_name = page.title | split: "(" | first | split: "（" | first | strip %}
 
 {% if page.paper_search.first %}
 {% assign names = names | concat: page.paper_search %}
 {% elsif page.paper_search %}
 {% assign names = names | push: page.paper_search %}
+{% elsif english_name %}
+{% assign names = names | push: english_name %}
 {% elsif page.title %}
 {% assign names = names | push: page.title %}
 {% endif %}

@@ -1,7 +1,7 @@
 # https://jekyllrb.com/docs/configuration/
 
 # site-wide variables
-title: ARTE Lab
+title: ARTE Group
 email: tongzhang@ucas.ac.cn
 description: "ARTE Lab at UCAS (LAMP): Autonomous Representation of Temps and Espace, with research in world models, spatial intelligence, and autonomous driving."
 url: "https://arte-lab.github.io"
