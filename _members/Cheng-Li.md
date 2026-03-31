@@ -9,4 +9,4 @@ image: "/assets/cv/ChengLi.jpg"
 email: "licheng200501@qq.com"
 ---
 
-I am currently an undergraduate student in the Department of Electronic Engineering at Tsinghua University and plan to join the ARTE Lab in the autumn of 2026.My research interests include Autonomous Driving and Spatial Intelligence.
+I am currently an undergraduate student in the Department of Electronic Engineering at Tsinghua University and plan to join the ARTE Group in the autumn of 2026. My research interests include Autonomous Driving and Spatial Intelligence.
