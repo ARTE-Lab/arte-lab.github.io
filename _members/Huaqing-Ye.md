@@ -1,5 +1,5 @@
 ---
-title: "Huaqing-Ye (叶华青)"
+title: "Huaqing Ye (叶华青)"
 search:
   - "Autonomous Driving"
 role: "Graduate student"
