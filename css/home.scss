@@ -69,25 +69,6 @@ body.is-homepage {
   }
 }
 
-body.is-site-page {
-  background: #ffffff;
-  color: inherit;
-
-  main {
-    overflow: visible;
-    background: #ffffff;
-  }
-
-  .home_section,
-  .home_section_light,
-  .home_section_dark,
-  .home_section_compact {
-    background: transparent;
-    backdrop-filter: none;
-    color: inherit;
-  }
-}
-
 .home_shell {
   box-sizing: border-box;
   width: min(1180px, calc(100vw - 64px));

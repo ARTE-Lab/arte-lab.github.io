@@ -5,7 +5,7 @@
 
 body.is-homepage {
   --hero-logo-overlay-height: min(100vh, 980px);
-  --hero-logo-stage-width: min(110vw, 1580px);
+  --hero-logo-stage-width: min(110vw, 1080px);
   --hero-logo-scale: 0.7;
   --hero-logo-opacity: 0.2;
   --hero-logo-flow-opacity: 0.18;
@@ -41,7 +41,7 @@ body.is-homepage {
 
   .home_logo_image {
     display: block;
-    width: 100%;
+    width: 90%;
     height: auto;
     opacity: var(--hero-logo-opacity);
     filter: blur(1.6px) saturate(1.05) contrast(1.04);
@@ -62,12 +62,6 @@ body.is-homepage {
     opacity: var(--hero-logo-flow-opacity);
     transform: translateX(-30%) skewX(-8deg);
     animation: logo_flow 7s ease-in-out infinite;
-  }
-}
-
-body.is-site-page {
-  .home_logo_overlay {
-    display: none !important;
   }
 }
 
