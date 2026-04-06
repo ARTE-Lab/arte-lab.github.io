@@ -13,8 +13,10 @@
 <link href="{{ 'css/header.css' | relative_url }}" rel="stylesheet" />
 <link href="{{ 'css/heading.css' | relative_url }}" rel="stylesheet" />
 <link href="{{ 'css/highlight.css' | relative_url }}" rel="stylesheet" />
+{% if page.url == '/' %}
 <link href="{{ 'css/home.css' | relative_url }}" rel="stylesheet" />
 <link href="{{ 'css/home-logo-overlay.css' | relative_url }}" rel="stylesheet" />
+{% endif %}
 <link href="{{ 'css/icon.css' | relative_url }}" rel="stylesheet" />
 <link href="{{ 'css/image.css' | relative_url }}" rel="stylesheet" />
 <link href="{{ 'css/gallery.css' | relative_url }}" rel="stylesheet" />
