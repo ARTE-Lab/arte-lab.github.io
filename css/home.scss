@@ -17,10 +17,28 @@ body.is-homepage {
   }
 
   main.homepage_main {
+    position: relative;
+    overflow: hidden;
     background:
       radial-gradient(circle at top left, rgba(17, 166, 214, 0.16), transparent 34%),
       radial-gradient(circle at 85% 20%, rgba(84, 208, 173, 0.16), transparent 26%),
       #07111d;
+  }
+
+  main.homepage_main::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: calc(min(100vh, 980px) - 60px);
+    width: min(1240px, 118vw);
+    height: 1200px;
+    transform: translateX(-50%);
+    background: url("/assets/cv/logo_without_bg.png") no-repeat center top;
+    background-size: contain;
+    opacity: 0.08;
+    filter: blur(1px) saturate(1.02);
+    pointer-events: none;
+    z-index: 0;
   }
 
   header::before,
@@ -33,6 +51,16 @@ body.is-homepage {
   footer {
     background: #07111d;
     box-shadow: none;
+  }
+
+  .home_section,
+  .home_section_light,
+  .home_section_dark,
+  .home_section_compact {
+    position: relative;
+    z-index: 1;
+    background: #07111d !important;
+    color: #f4f6fb;
   }
 }
 
@@ -53,22 +81,6 @@ body.is-homepage {
     radial-gradient(circle at 88% 18%, rgba(84, 209, 174, 0.16), transparent 24%),
     linear-gradient(180deg, rgba(5, 7, 11, 0.68), rgba(5, 7, 11, 0.94)),
     #05070b;
-}
-
-.home_hero .home_shell {
-  position: relative;
-}
-
-.home_hero .home_shell::before {
-  content: "";
-  position: absolute;
-  inset: -14% -2% -18% 42%;
-  background: url("/assets/cv/new_logo_cut.jpg") no-repeat center center;
-  background-size: contain;
-  opacity: 0.2;
-  filter: saturate(1.05) contrast(1.02);
-  transform: scale(1.08);
-  pointer-events: none;
 }
 
 .home_hero::before,
@@ -189,15 +201,6 @@ body.is-homepage {
 
 .home_section {
   padding: 88px 0;
-}
-
-.home_section_light {
-  background: #07111d;
-  color: #f4f6fb;
-}
-
-.home_section_dark {
-  background: #07111d;
 }
 
 .home_section_compact {
