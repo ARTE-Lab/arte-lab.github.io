@@ -6,27 +6,28 @@
 
 header {
   box-sizing: border-box;
-  position: relative;
+  position: sticky;
+  top: 0;
   @include flex-center;
   justify-content: space-between;
-  padding: 40px;
+  padding: 18px 24px;
   color: $white;
   background: $dark-gray;
   font-family: $sans;
   box-shadow: $shadow;
-  z-index: 1;
+  z-index: 30;
 
   .logo_row {
     @include inline-flex-center;
 
     .logo > * {
       max-width: 100%;
-      height: 50px;
+      height: 42px;
     }
 
     .logo_text {
       font-family: $sans;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       margin: 0 10px;
       text-align: center;
     }
@@ -35,14 +36,14 @@ header {
   .nav_row {
     @include inline-flex-center;
     flex-wrap: wrap;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: $medium;
     text-transform: uppercase;
     letter-spacing: 1px;
 
     .nav_link {
       display: inline-block;
-      padding: 10px;
+      padding: 6px 8px;
       text-align: center;
       white-space: nowrap;
       transition: opacity $fast;
@@ -64,6 +65,7 @@ header {
   }
 
   @media (max-width: $tablet) {
+    padding: 16px 18px;
     flex-direction: column;
 
     .logo_row {
@@ -72,6 +74,8 @@ header {
   }
 
   @media (max-width: $phone) {
+    padding: 12px 14px;
+
     .logo_row {
       margin-bottom: 20px;
       flex-direction: column;
