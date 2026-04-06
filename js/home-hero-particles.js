@@ -140,6 +140,7 @@
             phase: Math.random() * Math.PI * 2,
             turnOffset: Math.random() * 0.65,
             spinDirection: Math.random() > 0.5 ? 1 : -1,
+            spinSpeed: 0.65 + Math.random() * 0.9,
             roamFrequencyX: 0.8 + Math.random() * 1.6,
             roamFrequencyY: 0.8 + Math.random() * 1.6,
             orbitFollowSpeed: 0.08 + Math.random() * 0.05,
@@ -177,16 +178,18 @@
 
       if (elapsed < timeline.orbit) {
         var orbitProgress = elapsed / timeline.orbit;
-        var localProgress = clamp((orbitProgress - particle.turnOffset * 0.35) / (1 - particle.turnOffset * 0.35), 0, 1);
+        var localStart = particle.turnOffset * 0.45;
+        var localSpan = Math.max(0.28, 1 - localStart);
+        var localProgress = clamp((orbitProgress - localStart) / localSpan, 0, 1);
         var easedProgress = easeInOutSine(localProgress);
         var startDx = scatterX - centerX;
         var startDy = scatterY - centerY;
-        var globalAngle = easeInOutSine(orbitProgress) * Math.PI;
-        var localAngle = easedProgress * (Math.PI * 0.85) * particle.spinDirection;
-        var foldAngle = globalAngle * 0.55 + localAngle * 0.45;
+        var baseAngle = easeInOutSine(orbitProgress) * (Math.PI * 0.45);
+        var localAngle = easedProgress * (Math.PI * particle.spinSpeed) * particle.spinDirection;
+        var foldAngle = baseAngle + localAngle;
         var cosFold = Math.cos(foldAngle);
         var sinFold = Math.sin(foldAngle);
-        var settle = 1 - easedProgress;
+        var settle = 1 - localProgress;
         var roamX =
           particle.roamX *
           settle *
