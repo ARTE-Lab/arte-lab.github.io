@@ -1,0 +1,36 @@
+---
+---
+
+@import "variables";
+
+body:not(.is-homepage) {
+  main {
+    box-sizing: border-box;
+    padding: 0 28px;
+  }
+
+  main > section {
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  main > section > .section {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: $page;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: $phone) {
+  body:not(.is-homepage) {
+    main {
+      padding: 0 16px;
+    }
+
+    main > section > .section {
+      padding: 28px 0;
+    }
+  }
+}
