@@ -49,8 +49,8 @@ redirect_from:
       <p>Current graduate and undergraduate students in the group.</p>
     </div>
     <div class="team_member_grid">
-      {% assign students = site.members | where: "group", "current" | where_exp: "member", "member.role == 'Graduate student' or member.role == 'Undergraduate student'" %}
-      {% for member in students %}
+      {% for member in site.members %}
+      {% if member.group == "current" and member.role != "professor" %}
       {% assign member_homepage = member.website | default: member.homepage | default: member["personal homepage"] %}
       <article class="team_member_card">
         <a class="team_member_image" href="{{ member.url | relative_url }}">
@@ -67,6 +67,7 @@ redirect_from:
           {% endif %}
         </div>
       </article>
+      {% endif %}
       {% endfor %}
     </div>
   </section>
