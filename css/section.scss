@@ -36,7 +36,13 @@ body {
   }
 }
 
-body:not(.is-homepage) {
+body.page-team,
+body.page-research,
+body.page-news,
+body.page-blog,
+body.page-resources,
+body.page-contact,
+body.page-member {
   main {
     padding: 0 24px !important;
   }
@@ -55,7 +61,13 @@ body:not(.is-homepage) {
 }
 
 @media (max-width: $phone) {
-  body:not(.is-homepage) {
+  body.page-team,
+  body.page-research,
+  body.page-news,
+  body.page-blog,
+  body.page-resources,
+  body.page-contact,
+  body.page-member {
     main {
       padding: 0 14px !important;
     }

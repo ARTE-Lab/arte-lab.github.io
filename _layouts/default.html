@@ -1,7 +1,16 @@
 <html>
   {% include head.html %}
   {% assign is_homepage = page.url == '/' %}
-  <body class="{% if is_homepage %}is-homepage{% endif %}">
+  <body class="
+    {% if is_homepage %}is-homepage{% endif %}
+    {% if page.url contains '/team' %} page-team{% endif %}
+    {% if page.url contains '/research' %} page-research{% endif %}
+    {% if page.url contains '/news' %} page-news{% endif %}
+    {% if page.url contains '/blog' %} page-blog{% endif %}
+    {% if page.url contains '/resources' %} page-resources{% endif %}
+    {% if page.url contains '/contact' %} page-contact{% endif %}
+    {% if page.collection == 'members' %} page-member{% endif %}
+  ">
     {% include header.html %}
     <main{% if is_homepage %} class="homepage_main"{% endif %}>
       {% if is_homepage %}
