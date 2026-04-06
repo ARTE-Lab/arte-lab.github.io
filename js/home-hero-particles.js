@@ -44,10 +44,11 @@
     var image = new Image();
     var ready = false;
     var sampleGap = window.innerWidth < 700 ? 10 : 8;
+    var animationStart = null;
     var timeline = {
-      scatter: 2400,
-      orbit: 3200,
-      gather: 2400,
+      scatter: 1800,
+      orbit: 2600,
+      gather: 1800,
       hold: 1200
     };
     var cycleDuration = timeline.scatter + timeline.orbit + timeline.gather + timeline.hold;
@@ -133,8 +134,8 @@
       }
     }
 
-    function getAnimationState(time, particle, width, height) {
-      var elapsed = time % cycleDuration;
+    function getAnimationState(elapsedTime, particle, width, height) {
+      var elapsed = elapsedTime % cycleDuration;
       var centerX = width / 2;
       var centerY = height / 2;
       var scatterX = particle.orbitBaseX;
@@ -143,6 +144,7 @@
       if (elapsed < timeline.scatter) {
         var scatterProgress = easeOutCubic(elapsed / timeline.scatter);
         return {
+          stage: "scatter",
           x: lerp(particle.baseX, scatterX, scatterProgress),
           y: lerp(particle.baseY, scatterY, scatterProgress)
         };
@@ -157,10 +159,12 @@
         var rotateAngle = orbitProgress * Math.PI * 2;
         var cosAngle = Math.cos(rotateAngle);
         var sinAngle = Math.sin(rotateAngle);
+        var orbitScale = 1 + Math.sin(orbitProgress * Math.PI) * 0.08;
 
         return {
-          x: centerX + startDx * cosAngle - startDy * sinAngle,
-          y: centerY + startDx * sinAngle + startDy * cosAngle + Math.sin(orbitProgress * Math.PI * 2 + particle.phase) * particle.orbitLift
+          stage: "orbit",
+          x: centerX + (startDx * cosAngle - startDy * sinAngle) * orbitScale,
+          y: centerY + (startDx * sinAngle + startDy * cosAngle) * orbitScale + Math.sin(orbitProgress * Math.PI * 2 + particle.phase) * particle.orbitLift
         };
       }
 
@@ -169,12 +173,14 @@
       if (elapsed < timeline.gather) {
         var gatherProgress = easeInOutSine(elapsed / timeline.gather);
         return {
+          stage: "gather",
           x: lerp(scatterX, particle.baseX, gatherProgress),
           y: lerp(scatterY, particle.baseY, gatherProgress)
         };
       }
 
       return {
+        stage: "hold",
         x: particle.baseX,
         y: particle.baseY
       };
@@ -190,12 +196,16 @@
       }
 
       var reducedMotion = mediaQuery.matches;
+      if (animationStart === null) {
+        animationStart = time;
+      }
+      var elapsedTime = time - animationStart;
 
       for (var i = 0; i < particles.length; i += 1) {
         var particle = particles[i];
         var motion = reducedMotion
-          ? { x: particle.baseX, y: particle.baseY }
-          : getAnimationState(time, particle, width, height);
+          ? { stage: "hold", x: particle.baseX, y: particle.baseY }
+          : getAnimationState(elapsedTime, particle, width, height);
         var targetX = motion.x;
         var targetY = motion.y;
 
@@ -210,8 +220,17 @@
           }
         }
 
-        particle.x += (targetX - particle.x) * particle.speed;
-        particle.y += (targetY - particle.y) * particle.speed;
+        var followSpeed = particle.speed;
+        if (motion.stage === "orbit") {
+          followSpeed = 0.18;
+        } else if (motion.stage === "gather") {
+          followSpeed = 0.12;
+        } else if (motion.stage === "scatter") {
+          followSpeed = 0.1;
+        }
+
+        particle.x += (targetX - particle.x) * followSpeed;
+        particle.y += (targetY - particle.y) * followSpeed;
 
         context.beginPath();
         context.fillStyle = particle.color;
@@ -239,6 +258,7 @@
 
     image.addEventListener("load", function () {
       resizeCanvas();
+      animationStart = null;
       if (animationId) {
         window.cancelAnimationFrame(animationId);
       }
