@@ -94,7 +94,19 @@ title: ARTE Group
   </div>
 </section>
 
-<section class="home_section home_section_light home_section_compact">
+<section class="home_section home_section_dark" id="professor">
+  <div class="home_shell">
+    <div class="home_section_heading">
+      <p class="home_eyebrow">Professor</p>
+      <h2>Leading the group with a focus on grounded visual intelligence.</h2>
+    </div>
+    <div class="home_professor_grid">
+      {% include team-list.html role="professor" group="current" %}
+    </div>
+  </div>
+</section>
+
+<section class="home_section home_section_dark home_section_compact">
   <div class="home_shell home_cta">
     <div>
       <p class="home_eyebrow">Explore More</p>

@@ -15,13 +15,17 @@ body.is-homepage {
   }
 
   .home_logo_overlay {
-    position: fixed;
-    inset: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: min(100vh, 980px);
     z-index: 5;
     pointer-events: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
 
   .home_logo_stage {
@@ -50,7 +54,7 @@ body.is-homepage {
     );
     mix-blend-mode: normal;
     filter: blur(10px);
-    opacity: 0.2;
+    opacity: 0.18;
     transform: translateX(-30%) skewX(-8deg);
     animation: logo_flow 7s ease-in-out infinite;
   }
@@ -59,15 +63,15 @@ body.is-homepage {
 @keyframes logo_flow {
   0% {
     transform: translateX(-32%) skewX(-8deg);
-    opacity: 0.22;
+    opacity: 0.16;
   }
   50% {
-    transform: translateX(32%) skewX(-8deg);
-    opacity: 0.4;
+    transform: translateX(28%) skewX(-8deg);
+    opacity: 0.28;
   }
   100% {
     transform: translateX(-32%) skewX(-8deg);
-    opacity: 0.22;
+    opacity: 0.16;
   }
 }
 
@@ -78,16 +82,12 @@ body.is-homepage {
       max-width: none;
     }
 
+    .home_logo_overlay {
+      height: min(84vh, 760px);
+    }
+
     .home_logo_image {
       opacity: 0.24;
-    }
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body.is-homepage {
-    .home_logo_flow {
-      animation: none;
     }
   }
 }
