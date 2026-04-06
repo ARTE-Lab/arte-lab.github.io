@@ -29,14 +29,14 @@ body.is-homepage {
     content: "";
     position: absolute;
     left: 50%;
-    top: calc(min(100vh, 980px) - 60px);
-    width: min(840px, 118vw);
-    height: 800px;
+    top: calc(min(100vh, 980px) - 120px);
+    width: min(1080px, 122vw);
+    height: 1080px;
     transform: translateX(-50%);
     background: url("/assets/cv/logo_without_bg.png") no-repeat center top;
     background-size: contain;
-    opacity: 0.08;
-    filter: blur(1px) saturate(1.02);
+    opacity: 0.13;
+    filter: blur(1.4px) saturate(1.02);
     pointer-events: none;
     z-index: 0;
   }
@@ -59,7 +59,8 @@ body.is-homepage {
   .home_section_compact {
     position: relative;
     z-index: 1;
-    background: #07111d !important;
+    background: rgba(7, 17, 29, 0.72) !important;
+    backdrop-filter: blur(2px);
     color: #f4f6fb;
   }
 }
@@ -410,12 +411,6 @@ body.is-homepage {
     min-height: auto;
   }
 
-  .home_hero .home_shell::before {
-    inset: auto 0 -8% 10%;
-    height: 48%;
-    opacity: 0.16;
-  }
-
   .home_hero_shell,
   .home_section {
     padding-top: 72px;
@@ -445,14 +440,6 @@ body.is-homepage {
   .home_section {
     padding-top: 54px;
     padding-bottom: 54px;
-  }
-
-  .home_hero .home_shell::before {
-    left: 2%;
-    right: 2%;
-    bottom: -4%;
-    height: 42%;
-    opacity: 0.14;
   }
 
   .home_about_grid p,
