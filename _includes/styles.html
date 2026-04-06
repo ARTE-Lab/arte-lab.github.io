@@ -19,6 +19,9 @@
 {% else %}
 <link href="{{ 'css/subpage.css' | relative_url }}" rel="stylesheet" />
 {% endif %}
+{% if page.url contains '/team' %}
+<link href="{{ 'css/team-page.css' | relative_url }}" rel="stylesheet" />
+{% endif %}
 <link href="{{ 'css/icon.css' | relative_url }}" rel="stylesheet" />
 <link href="{{ 'css/image.css' | relative_url }}" rel="stylesheet" />
 <link href="{{ 'css/gallery.css' | relative_url }}" rel="stylesheet" />
