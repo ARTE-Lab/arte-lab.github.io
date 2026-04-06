@@ -156,15 +156,19 @@
         var orbitProgress = easeInOutSine(elapsed / timeline.orbit);
         var startDx = scatterX - centerX;
         var startDy = scatterY - centerY;
-        var rotateAngle = orbitProgress * Math.PI * 2;
-        var cosAngle = Math.cos(rotateAngle);
-        var sinAngle = Math.sin(rotateAngle);
-        var orbitScale = 1 + Math.sin(orbitProgress * Math.PI) * 0.08;
+        var foldAngle = orbitProgress * Math.PI * 2;
+        var cosFold = Math.cos(foldAngle);
+        var depth = Math.sin(foldAngle);
+        var perspective = 1 + depth * 0.42;
+        var inwardPull = 1 - Math.abs(depth) * 0.32;
+        var verticalWave = Math.sin(orbitProgress * Math.PI * 2 + particle.phase) * particle.orbitLift;
 
         return {
           stage: "orbit",
-          x: centerX + (startDx * cosAngle - startDy * sinAngle) * orbitScale,
-          y: centerY + (startDx * sinAngle + startDy * cosAngle) * orbitScale + Math.sin(orbitProgress * Math.PI * 2 + particle.phase) * particle.orbitLift
+          x: centerX + startDx * cosFold * inwardPull,
+          y: centerY + startDy * perspective + verticalWave,
+          scale: 0.72 + Math.max(0, perspective - 0.12) * 0.58,
+          alpha: 0.12 + (perspective - 0.58) * 0.18
         };
       }
 
@@ -182,7 +186,9 @@
       return {
         stage: "hold",
         x: particle.baseX,
-        y: particle.baseY
+        y: particle.baseY,
+        scale: 1,
+        alpha: 1
       };
     }
 
@@ -204,7 +210,7 @@
       for (var i = 0; i < particles.length; i += 1) {
         var particle = particles[i];
         var motion = reducedMotion
-          ? { stage: "hold", x: particle.baseX, y: particle.baseY }
+          ? { stage: "hold", x: particle.baseX, y: particle.baseY, scale: 1, alpha: 1 }
           : getAnimationState(elapsedTime, particle, width, height);
         var targetX = motion.x;
         var targetY = motion.y;
@@ -232,9 +238,16 @@
         particle.x += (targetX - particle.x) * followSpeed;
         particle.y += (targetY - particle.y) * followSpeed;
 
+        var drawScale = motion.scale || 1;
+        var drawAlpha = typeof motion.alpha === "number" ? motion.alpha : 1;
+        var size = particle.size * drawScale;
+        var color = particle.color.replace(/[\d.]+\)$/, function () {
+          return Math.max(0.08, Math.min(0.92, drawAlpha)).toFixed(3) + ")";
+        });
+
         context.beginPath();
-        context.fillStyle = particle.color;
-        context.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        context.fillStyle = color;
+        context.arc(particle.x, particle.y, size, 0, Math.PI * 2);
         context.fill();
       }
 
