@@ -9,7 +9,8 @@ redirect_from:
 ---
 
 {% assign professor = site.members | where: "role", "professor" | where: "group", "current" | first %}
-{% assign professor_bio = professor.content | strip | split: "\n\n" | first %}
+{% assign professor_bio_html = professor.content | markdownify | strip | split: "</p>" | first | append: "</p>" %}
+{% assign professor_tags = professor.research_interests | default: professor.search %}
 
 <div class="team_page">
   <div class="team_page_heading">
@@ -29,9 +30,9 @@ redirect_from:
     <div class="team_feature_content">
       <p class="team_feature_kicker">Professor</p>
       <h2>{{ professor.title }}</h2>
-      {% include tags.html tags=professor.search %}
+      {% include tags.html tags=professor_tags %}
       <div class="team_feature_bio">
-        {{ professor_bio | markdownify }}
+        {{ professor_bio_html }}
       </div>
       <p class="team_feature_links">
         <a href="{{ professor.url | relative_url }}">Profile</a>
@@ -52,6 +53,7 @@ redirect_from:
       {% for member in site.members %}
       {% if member.group == "current" and member.role != "professor" %}
       {% assign member_homepage = member.website | default: member.homepage | default: member["personal homepage"] %}
+      {% assign member_tags = member.research_interests | default: member.search %}
       <article class="team_member_card">
         <a class="team_member_image" href="{{ member.url | relative_url }}">
           <img src="{{ member.image | relative_url }}" alt="{{ member.title }}" />
@@ -59,8 +61,8 @@ redirect_from:
         <div class="team_member_body">
           <h3><a href="{{ member.url | relative_url }}">{{ member.title }}</a></h3>
           <p class="team_member_role">{{ member.role }}</p>
-          {% if member.search %}
-          {% include tags.html tags=member.search %}
+          {% if member_tags %}
+          {% include tags.html tags=member_tags %}
           {% endif %}
           {% if member_homepage %}
           <p class="team_member_link"><a href="{{ member_homepage }}">Homepage</a></p>
@@ -80,10 +82,11 @@ redirect_from:
     <div class="team_alumni_grid">
       {% assign alumni = site.members | where: "group", "alum" %}
       {% for member in alumni %}
+      {% assign member_tags = member.research_interests | default: member.search %}
       <article class="team_alumni_item">
         <a href="{{ member.url | relative_url }}">{{ member.title }}</a>
-        {% if member.search %}
-        <span>{{ member.search | join: " · " }}</span>
+        {% if member_tags %}
+        <span>{{ member_tags | join: " · " }}</span>
         {% endif %}
       </article>
       {% endfor %}
