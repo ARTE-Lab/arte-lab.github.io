@@ -6,7 +6,7 @@ title: ARTE Group
 <section class="home_hero">
   <div class="home_hero_overlay" aria-hidden="true">
     <div class="home_hero_overlay_stage">
-      <img class="home_hero_overlay_image" src="{{ 'assets/cv/logo_without_bg.png' | relative_url }}" alt="" />
+      <img class="home_hero_overlay_image" src="{{ 'assets/cv/new_logo_cut.jpg' | relative_url }}" alt="" />
       <span class="home_hero_overlay_flow"></span>
     </div>
   </div>
