@@ -41,6 +41,10 @@ body:not(.is-homepage) {
     padding: 0 24px !important;
   }
 
+  section {
+    padding: 0 24px !important;
+  }
+
   main > section > .section {
     box-sizing: border-box !important;
     width: 100% !important;
@@ -53,6 +57,10 @@ body:not(.is-homepage) {
 @media (max-width: $phone) {
   body:not(.is-homepage) {
     main {
+      padding: 0 14px !important;
+    }
+
+    section {
       padding: 0 14px !important;
     }
 
