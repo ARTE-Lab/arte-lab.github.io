@@ -11,9 +11,24 @@
     return start + (end - start) * amount;
   }
 
-  function rgbaFromSample(r, g, b, alpha) {
-    var boost = Math.min(255, Math.max(r, g, b) + 36);
-    return "rgba(" + boost + "," + Math.min(255, g + 24) + "," + Math.min(255, b + 44) + "," + alpha + ")";
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
+  function brightenColor(r, g, b) {
+    return {
+      r: Math.min(255, Math.max(r, g, b) + 36),
+      g: Math.min(255, g + 24),
+      b: Math.min(255, b + 44)
+    };
+  }
+
+  function rgbaString(color, alpha, shade) {
+    var factor = typeof shade === "number" ? shade : 1;
+    var rr = Math.round(clamp(color.r * factor, 0, 255));
+    var gg = Math.round(clamp(color.g * factor, 0, 255));
+    var bb = Math.round(clamp(color.b * factor, 0, 255));
+    return "rgba(" + rr + "," + gg + "," + bb + "," + clamp(alpha, 0.05, 0.95).toFixed(3) + ")";
   }
 
   function initHeroParticles() {
@@ -118,7 +133,8 @@
             orbitBaseX: x + Math.cos(angle) * radius,
             orbitBaseY: y + Math.sin(angle) * radius,
             size: width < 700 ? 1.15 + Math.random() * 1.1 : 1.3 + Math.random() * 1.5,
-            color: rgbaFromSample(r, g, b, 0.16 + luminance / 680),
+            color: brightenColor(r, g, b),
+            baseAlpha: 0.18 + luminance / 680,
             phase: Math.random() * Math.PI * 2,
             speed: 0.038 + Math.random() * 0.024,
             orbitLift: (Math.random() - 0.5) * (width < 700 ? 18 : 28)
@@ -158,17 +174,21 @@
         var startDy = scatterY - centerY;
         var foldAngle = orbitProgress * Math.PI * 2;
         var cosFold = Math.cos(foldAngle);
-        var depth = Math.sin(foldAngle);
-        var perspective = 1 + depth * 0.42;
-        var inwardPull = 1 - Math.abs(depth) * 0.32;
+        var sinFold = Math.sin(foldAngle);
+        var zDepth = startDx * sinFold;
+        var perspectiveDistance = width * 0.72;
+        var perspectiveScale = perspectiveDistance / (perspectiveDistance - zDepth);
+        var edgeNarrow = 0.18 + Math.abs(cosFold) * 0.82;
         var verticalWave = Math.sin(orbitProgress * Math.PI * 2 + particle.phase) * particle.orbitLift;
+        var shade = 0.52 + ((zDepth / (width * 0.24)) + 1) * 0.34;
 
         return {
           stage: "orbit",
-          x: centerX + startDx * cosFold * inwardPull,
-          y: centerY + startDy * perspective + verticalWave,
-          scale: 0.72 + Math.max(0, perspective - 0.12) * 0.58,
-          alpha: 0.12 + (perspective - 0.58) * 0.18
+          x: centerX + startDx * cosFold * edgeNarrow,
+          y: centerY + startDy * perspectiveScale + verticalWave,
+          scale: perspectiveScale,
+          alpha: particle.baseAlpha * (0.72 + perspectiveScale * 0.28),
+          shade: shade
         };
       }
 
@@ -188,7 +208,8 @@
         x: particle.baseX,
         y: particle.baseY,
         scale: 1,
-        alpha: 1
+        alpha: particle.baseAlpha,
+        shade: 1
       };
     }
 
@@ -210,7 +231,7 @@
       for (var i = 0; i < particles.length; i += 1) {
         var particle = particles[i];
         var motion = reducedMotion
-          ? { stage: "hold", x: particle.baseX, y: particle.baseY, scale: 1, alpha: 1 }
+          ? { stage: "hold", x: particle.baseX, y: particle.baseY, scale: 1, alpha: particle.baseAlpha, shade: 1 }
           : getAnimationState(elapsedTime, particle, width, height);
         var targetX = motion.x;
         var targetY = motion.y;
@@ -239,11 +260,10 @@
         particle.y += (targetY - particle.y) * followSpeed;
 
         var drawScale = motion.scale || 1;
-        var drawAlpha = typeof motion.alpha === "number" ? motion.alpha : 1;
+        var drawAlpha = typeof motion.alpha === "number" ? motion.alpha : particle.baseAlpha;
+        var drawShade = typeof motion.shade === "number" ? motion.shade : 1;
         var size = particle.size * drawScale;
-        var color = particle.color.replace(/[\d.]+\)$/, function () {
-          return Math.max(0.08, Math.min(0.92, drawAlpha)).toFixed(3) + ")";
-        });
+        var color = rgbaString(particle.color, drawAlpha, drawShade);
 
         context.beginPath();
         context.fillStyle = color;
