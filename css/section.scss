@@ -35,3 +35,32 @@ body {
     }
   }
 }
+
+body:not(.is-homepage) {
+  section {
+    .section {
+      max-width: 1240px;
+      padding: 56px 56px;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  body:not(.is-homepage) {
+    section {
+      .section {
+        padding: 44px 32px;
+      }
+    }
+  }
+}
+
+@media (max-width: $phone) {
+  body:not(.is-homepage) {
+    section {
+      .section {
+        padding: 32px 20px;
+      }
+    }
+  }
+}
