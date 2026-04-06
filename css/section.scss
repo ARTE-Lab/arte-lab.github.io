@@ -37,9 +37,13 @@ body {
 }
 
 body:not(.is-homepage) {
+  main {
+    padding: 0 24px;
+  }
+
   main > section > .section {
     box-sizing: border-box;
-    width: calc(100vw - 48px);
+    width: 100%;
     max-width: $page;
     margin: 0 auto;
     padding: 40px;
@@ -48,8 +52,12 @@ body:not(.is-homepage) {
 
 @media (max-width: $phone) {
   body:not(.is-homepage) {
+    main {
+      padding: 0 14px;
+    }
+
     main > section > .section {
-      width: calc(100vw - 28px);
+      width: 100%;
       padding: 24px 20px;
     }
   }
