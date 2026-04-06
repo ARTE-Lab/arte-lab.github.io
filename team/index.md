@@ -15,8 +15,6 @@ redirect_from:
 ## Current Members
 
 
-Our lab comprises some of the finest researchers, including lecturers, postgraduate students and interns, all dedicated to advancing the frontiers of academic research. We wish our lab every success! We look forward to welcoming you on board!
-
 # Professor
 {% capture html %}
 {% include team-list.html role="professor" group="current" %}
