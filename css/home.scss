@@ -38,6 +38,7 @@ body.is-homepage {
 
   .home_hero,
   .home_section,
+  .home_section_light,
   .home_section_compact {
     position: relative;
     z-index: 1;
@@ -52,15 +53,16 @@ body.is-homepage {
 }
 
 .home_hero {
+  position: relative;
   min-height: calc(100vh - 136px);
   display: flex;
   align-items: center;
   overflow: hidden;
   background:
-    radial-gradient(circle at top left, rgba(16, 169, 215, 0.18), transparent 28%),
+    radial-gradient(circle at top left, rgba(16, 169, 215, 0.2), transparent 28%),
     radial-gradient(circle at 88% 18%, rgba(84, 209, 174, 0.14), transparent 24%),
-    linear-gradient(180deg, rgba(5, 7, 11, 0.70), rgba(5, 7, 11, 0.94)),
-    transparent;
+    linear-gradient(180deg, rgba(7, 17, 29, 0.88), rgba(7, 17, 29, 0.96)),
+    #07111d;
 }
 
 .home_hero::before,
@@ -92,7 +94,7 @@ body.is-homepage {
 
 .home_hero_shell {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   padding: 96px 0 88px;
 }
 
@@ -188,6 +190,12 @@ body.is-homepage {
   color: #f4f6fb;
 }
 
+.home_section_light {
+  padding: 88px 0;
+  background: #f7f9fc;
+  color: #102033;
+}
+
 .home_section_compact {
   padding: 70px 0 92px;
   background: #07111d;
@@ -229,6 +237,29 @@ body.is-homepage {
   padding: 30px;
   text-align: left;
   color: #d0d9e8;
+}
+
+.home_section_light .home_eyebrow {
+  color: #2b6f8e;
+}
+
+.home_section_light .home_section_heading h2,
+.home_section_light .home_work_title,
+.home_section_light .home_direction_card h3 {
+  color: #102033 !important;
+}
+
+.home_section_light .home_work_meta,
+.home_section_light .home_work_authors,
+.home_section_light .home_professor_bio,
+.home_section_light p {
+  color: #46586c;
+}
+
+.home_section_light .home_work_card,
+.home_section_light .home_professor_bio {
+  background: #ffffff;
+  border-color: rgba(16, 32, 51, 0.08);
 }
 
 .home_work_grid {

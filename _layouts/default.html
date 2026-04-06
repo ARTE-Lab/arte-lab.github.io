@@ -5,12 +5,6 @@
     {% include header.html %}
     <main{% if is_homepage %} class="homepage_main"{% endif %}>
       {% if is_homepage %}
-      <div class="home_logo_overlay" aria-hidden="true">
-        <div class="home_logo_stage">
-          <img class="home_logo_image" src="{{ 'assets/cv/new_logo_cut.jpg' | relative_url }}" alt="" />
-          <span class="home_logo_flow"></span>
-        </div>
-      </div>
       {{ content }}
       {% else %}
       {% include content.html content=content %}

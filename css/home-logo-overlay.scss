@@ -4,14 +4,13 @@
 @import "variables";
 
 body.is-homepage {
-  .home_logo_overlay {
+  .home_hero .home_logo_overlay {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
-    height: 100vh;
-    max-height: 980px;
-    z-index: 0;
+    bottom: 0;
+    z-index: 1;
     pointer-events: none;
     display: flex;
     align-items: center;
@@ -19,7 +18,7 @@ body.is-homepage {
     overflow: hidden;
   }
 
-  .home_logo_stage {
+  .home_hero .home_logo_stage {
     position: relative;
     width: 116vw;
     max-width: 1220px;
@@ -27,7 +26,7 @@ body.is-homepage {
     transform-origin: center center;
   }
 
-  .home_logo_image {
+  .home_hero .home_logo_image {
     display: block;
     width: 100%;
     height: auto;
@@ -35,7 +34,7 @@ body.is-homepage {
     filter: blur(1.6px) saturate(1.04) contrast(1.03);
   }
 
-  .home_logo_flow {
+  .home_hero .home_logo_flow {
     position: absolute;
     inset: -4%;
     background: linear-gradient(
@@ -69,17 +68,18 @@ body.is-homepage {
 
 @media (max-width: $tablet) {
   body.is-homepage {
-    .home_logo_overlay {
+    .home_hero .home_logo_overlay {
+      bottom: auto;
       height: 84vh;
       max-height: 760px;
     }
 
-    .home_logo_stage {
+    .home_hero .home_logo_stage {
       width: 136vw;
       max-width: none;
     }
 
-    .home_logo_image {
+    .home_hero .home_logo_image {
       opacity: 0.24;
     }
   }

@@ -4,6 +4,12 @@ title: ARTE Group
 ---
 
 <section class="home_hero">
+  <div class="home_logo_overlay" aria-hidden="true">
+    <div class="home_logo_stage">
+      <img class="home_logo_image" src="{{ 'assets/cv/new_logo_cut.jpg' | relative_url }}" alt="" />
+      <span class="home_logo_flow"></span>
+    </div>
+  </div>
   <div class="home_shell home_hero_shell">
     <div class="home_hero_copy">
       <p class="home_kicker">UCAS · LAMP Laboratory</p>
@@ -43,7 +49,7 @@ title: ARTE Group
   </div>
 </section>
 
-<section class="home_section" id="works">
+<section class="home_section home_section_light" id="works">
   <div class="home_shell">
     <div class="home_section_heading">
       <p class="home_eyebrow">Representative Works</p>
@@ -99,7 +105,7 @@ title: ARTE Group
   </div>
 </section>
 
-<section class="home_section" id="professor">
+<section class="home_section home_section_light" id="professor">
   <div class="home_shell">
     {% assign professor = site.members | where: "role", "professor" | where: "group", "current" | first %}
     <div class="home_section_heading">
