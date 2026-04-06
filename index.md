@@ -96,12 +96,23 @@ title: ARTE Group
 
 <section class="home_section home_section_dark" id="professor">
   <div class="home_shell">
+    {% assign professor = site.members | where: "role", "professor" | where: "group", "current" | first %}
     <div class="home_section_heading">
       <p class="home_eyebrow">Professor</p>
       <h2>Leading the group with a focus on grounded visual intelligence.</h2>
     </div>
-    <div class="home_professor_grid">
-      {% include team-list.html role="professor" group="current" %}
+    <div class="home_professor_layout">
+      <div class="home_professor_profile">
+        {% include portrait.html
+          name=professor.title
+          link=professor.url
+          image=professor.image
+          role=professor.role
+        %}
+      </div>
+      <div class="home_professor_bio">
+        {{ professor.content | markdownify }}
+      </div>
     </div>
   </div>
 </section>
