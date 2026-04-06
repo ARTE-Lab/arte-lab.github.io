@@ -3,6 +3,14 @@
     return -(Math.cos(Math.PI * value) - 1) / 2;
   }
 
+  function easeOutCubic(value) {
+    return 1 - Math.pow(1 - value, 3);
+  }
+
+  function lerp(start, end, amount) {
+    return start + (end - start) * amount;
+  }
+
   function rgbaFromSample(r, g, b, alpha) {
     var boost = Math.min(255, Math.max(r, g, b) + 36);
     return "rgba(" + boost + "," + Math.min(255, g + 24) + "," + Math.min(255, b + 44) + "," + alpha + ")";
@@ -36,6 +44,13 @@
     var image = new Image();
     var ready = false;
     var sampleGap = window.innerWidth < 700 ? 10 : 8;
+    var timeline = {
+      scatter: 2400,
+      orbit: 3200,
+      gather: 2400,
+      hold: 1200
+    };
+    var cycleDuration = timeline.scatter + timeline.orbit + timeline.gather + timeline.hold;
 
     function resizeCanvas() {
       var ratio = window.devicePixelRatio || 1;
@@ -87,20 +102,25 @@
             continue;
           }
 
-          var angle = Math.random() * Math.PI * 2;
-          var radius = 22 + Math.random() * (width < 700 ? 56 : 96);
+          var centerX = width / 2;
+          var centerY = height / 2;
+          var baseDx = x - centerX;
+          var baseDy = y - centerY;
+          var angle = Math.atan2(baseDy, baseDx) + (Math.random() - 0.5) * 0.4;
+          var radius = (width < 700 ? 42 : 74) + Math.random() * (width < 700 ? 52 : 110);
 
           particles.push({
             x: x,
             y: y,
             baseX: x,
             baseY: y,
-            driftX: Math.cos(angle) * radius,
-            driftY: Math.sin(angle) * radius,
+            orbitBaseX: x + Math.cos(angle) * radius,
+            orbitBaseY: y + Math.sin(angle) * radius,
             size: width < 700 ? 1.15 + Math.random() * 1.1 : 1.3 + Math.random() * 1.5,
             color: rgbaFromSample(r, g, b, 0.16 + luminance / 680),
             phase: Math.random() * Math.PI * 2,
-            speed: 0.028 + Math.random() * 0.022
+            speed: 0.038 + Math.random() * 0.024,
+            orbitLift: (Math.random() - 0.5) * (width < 700 ? 18 : 28)
           });
         }
       }
@@ -111,6 +131,53 @@
       } else {
         overlay.classList.remove("is-fallback");
       }
+    }
+
+    function getAnimationState(time, particle, width, height) {
+      var elapsed = time % cycleDuration;
+      var centerX = width / 2;
+      var centerY = height / 2;
+      var scatterX = particle.orbitBaseX;
+      var scatterY = particle.orbitBaseY;
+
+      if (elapsed < timeline.scatter) {
+        var scatterProgress = easeOutCubic(elapsed / timeline.scatter);
+        return {
+          x: lerp(particle.baseX, scatterX, scatterProgress),
+          y: lerp(particle.baseY, scatterY, scatterProgress)
+        };
+      }
+
+      elapsed -= timeline.scatter;
+
+      if (elapsed < timeline.orbit) {
+        var orbitProgress = easeInOutSine(elapsed / timeline.orbit);
+        var startDx = scatterX - centerX;
+        var startDy = scatterY - centerY;
+        var rotateAngle = orbitProgress * Math.PI * 2;
+        var cosAngle = Math.cos(rotateAngle);
+        var sinAngle = Math.sin(rotateAngle);
+
+        return {
+          x: centerX + startDx * cosAngle - startDy * sinAngle,
+          y: centerY + startDx * sinAngle + startDy * cosAngle + Math.sin(orbitProgress * Math.PI * 2 + particle.phase) * particle.orbitLift
+        };
+      }
+
+      elapsed -= timeline.orbit;
+
+      if (elapsed < timeline.gather) {
+        var gatherProgress = easeInOutSine(elapsed / timeline.gather);
+        return {
+          x: lerp(scatterX, particle.baseX, gatherProgress),
+          y: lerp(scatterY, particle.baseY, gatherProgress)
+        };
+      }
+
+      return {
+        x: particle.baseX,
+        y: particle.baseY
+      };
     }
 
     function renderFrame(time) {
@@ -126,14 +193,11 @@
 
       for (var i = 0; i < particles.length; i += 1) {
         var particle = particles[i];
-        var wave = reducedMotion ? 0 : easeInOutSine((Math.sin(time * 0.00032 + particle.phase) + 1) / 2);
-        var targetX = particle.baseX + particle.driftX * wave;
-        var targetY = particle.baseY + particle.driftY * wave;
-
-        if (!reducedMotion) {
-          targetX += Math.cos(time * 0.00055 + particle.phase) * 6;
-          targetY += Math.sin(time * 0.00048 + particle.phase * 1.3) * 8;
-        }
+        var motion = reducedMotion
+          ? { x: particle.baseX, y: particle.baseY }
+          : getAnimationState(time, particle, width, height);
+        var targetX = motion.x;
+        var targetY = motion.y;
 
         if (pointer.active) {
           var dx = particle.x - pointer.x;
@@ -155,9 +219,7 @@
         context.fill();
       }
 
-      if (!reducedMotion) {
-        animationId = window.requestAnimationFrame(renderFrame);
-      }
+      animationId = window.requestAnimationFrame(renderFrame);
     }
 
     hero.addEventListener("pointermove", function (event) {
@@ -177,14 +239,10 @@
 
     image.addEventListener("load", function () {
       resizeCanvas();
-      if (mediaQuery.matches) {
-        renderFrame(0);
-      } else {
-        if (animationId) {
-          window.cancelAnimationFrame(animationId);
-        }
-        animationId = window.requestAnimationFrame(renderFrame);
+      if (animationId) {
+        window.cancelAnimationFrame(animationId);
       }
+      animationId = window.requestAnimationFrame(renderFrame);
     });
 
     image.addEventListener("error", function () {
