@@ -11,9 +11,26 @@ body.is-homepage {
     position: sticky;
     top: 0;
     z-index: 20;
+    padding: 22px 28px;
     background: rgba(7, 10, 18, 0.72);
     backdrop-filter: blur(16px);
     box-shadow: none;
+  }
+
+  header .logo_row .logo > * {
+    height: 72px;
+  }
+
+  header .logo_row .logo_text {
+    font-size: 1.35rem;
+  }
+
+  header .nav_row {
+    font-size: 0.82rem;
+  }
+
+  header .nav_row .nav_link {
+    padding: 8px 9px;
   }
 
   header::before,
@@ -439,6 +456,14 @@ body.is-homepage {
   }
 
   @media (max-width: $tablet) {
+    header {
+      padding: 18px 22px;
+    }
+
+    header .logo_row .logo > * {
+      height: 60px;
+    }
+
     .home_shell {
       width: calc(100vw - 40px);
     }
@@ -472,6 +497,14 @@ body.is-homepage {
   }
 
   @media (max-width: $phone) {
+    header {
+      padding: 16px 18px;
+    }
+
+    header .logo_row .logo > * {
+      height: 52px;
+    }
+
     .home_shell {
       width: calc(100vw - 28px);
     }
