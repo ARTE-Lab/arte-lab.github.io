@@ -36,23 +36,6 @@ body.is-homepage {
       #07111d;
   }
 
-  main.homepage_main::before {
-    content: "";
-    position: fixed;
-    left: 50%;
-    top: calc(100vh - 120px);
-    width: 122vw;
-    max-width: 1080px;
-    height: 1080px;
-    transform: translateX(-50%);
-    background: url("/assets/cv/logo_without_bg.png") no-repeat center top;
-    background-size: contain;
-    opacity: 0.12;
-    filter: blur(1.2px) saturate(1.02);
-    pointer-events: none;
-    z-index: 0;
-  }
-
   .home_hero,
   .home_section,
   .home_section_compact {
@@ -201,15 +184,13 @@ body.is-homepage {
 
 .home_section {
   padding: 88px 0;
-  background: rgba(7, 17, 29, 0.74);
-  backdrop-filter: blur(2px);
+  background: #07111d;
   color: #f4f6fb;
 }
 
 .home_section_compact {
   padding: 70px 0 92px;
-  background: rgba(7, 17, 29, 0.74);
-  backdrop-filter: blur(2px);
+  background: #07111d;
   color: #f4f6fb;
 }
 
@@ -370,16 +351,6 @@ body.is-homepage {
 }
 
 @media (max-width: $tablet) {
-  body.is-homepage {
-    main.homepage_main::before {
-      top: calc(84vh - 60px);
-      width: 128vw;
-      max-width: none;
-      height: 860px;
-      opacity: 0.1;
-    }
-  }
-
   .home_shell {
     width: calc(100vw - 40px);
   }
