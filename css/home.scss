@@ -4,6 +4,10 @@
 @import "variables";
 
 body.is-homepage {
+  --home-static-logo-top: calc(min(100vh, 980px) - 120px);
+  --home-static-logo-width: min(1080px, 122vw);
+  --home-static-logo-height: 1080px;
+  --home-static-logo-opacity: 0.13;
   background: #05070b;
   color: #f4f6fb;
 
@@ -29,13 +33,13 @@ body.is-homepage {
     content: "";
     position: fixed;
     left: 50%;
-    top: calc(min(100vh, 980px) - 120px);
-    width: min(1080px, 122vw);
-    height: 1080px;
+    top: var(--home-static-logo-top);
+    width: var(--home-static-logo-width);
+    height: var(--home-static-logo-height);
     transform: translateX(-50%);
     background: url("/assets/cv/logo_without_bg.png") no-repeat center top;
     background-size: contain;
-    opacity: 0.13;
+    opacity: var(--home-static-logo-opacity);
     filter: blur(1.4px) saturate(1.02);
     pointer-events: none;
     z-index: 0;
@@ -62,6 +66,25 @@ body.is-homepage {
     background: rgba(7, 17, 29, 0.72) !important;
     backdrop-filter: blur(2px);
     color: #f4f6fb;
+  }
+}
+
+body.is-site-page {
+  background: #ffffff;
+  color: inherit;
+
+  main {
+    overflow: visible;
+    background: #ffffff;
+  }
+
+  .home_section,
+  .home_section_light,
+  .home_section_dark,
+  .home_section_compact {
+    background: transparent;
+    backdrop-filter: none;
+    color: inherit;
   }
 }
 
@@ -403,6 +426,13 @@ body.is-homepage {
 }
 
 @media (max-width: $tablet) {
+  body.is-homepage {
+    --home-static-logo-top: calc(min(100vh, 760px) - 60px);
+    --home-static-logo-width: 128vw;
+    --home-static-logo-height: 860px;
+    --home-static-logo-opacity: 0.11;
+  }
+
   .home_shell {
     width: min(100vw - 40px, 1180px);
   }

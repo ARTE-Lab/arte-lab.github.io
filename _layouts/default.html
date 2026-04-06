@@ -1,7 +1,7 @@
 <html>
   {% include head.html %}
-  {% assign is_homepage = page.url == '/' or page.url == '/index.html' %}
-  <body class="{% if is_homepage %}is-homepage{% endif %}">
+  {% assign is_homepage = page.url == '/' %}
+  <body class="{% if is_homepage %}is-homepage{% else %}is-site-page{% endif %}">
     {% if is_homepage %}
     <div class="home_logo_overlay" aria-hidden="true">
       <div class="home_logo_stage">
