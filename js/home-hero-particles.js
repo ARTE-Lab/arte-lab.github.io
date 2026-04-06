@@ -132,13 +132,17 @@
             baseY: y,
             orbitBaseX: x + Math.cos(angle) * radius,
             orbitBaseY: y + Math.sin(angle) * radius,
-            roamX: (Math.random() - 0.5) * (width < 700 ? 42 : 72),
-            roamY: (Math.random() - 0.5) * (width < 700 ? 28 : 52),
+            roamX: (Math.random() - 0.5) * (width < 700 ? 58 : 98),
+            roamY: (Math.random() - 0.5) * (width < 700 ? 42 : 76),
             size: width < 700 ? 1.15 + Math.random() * 1.1 : 1.3 + Math.random() * 1.5,
             color: brightenColor(r, g, b),
             baseAlpha: 0.18 + luminance / 680,
             phase: Math.random() * Math.PI * 2,
-            turnOffset: (Math.random() - 0.5) * 0.22,
+            turnOffset: Math.random() * 0.65,
+            spinDirection: Math.random() > 0.5 ? 1 : -1,
+            roamFrequencyX: 0.8 + Math.random() * 1.6,
+            roamFrequencyY: 0.8 + Math.random() * 1.6,
+            orbitFollowSpeed: 0.08 + Math.random() * 0.05,
             speed: 0.038 + Math.random() * 0.024,
             orbitLift: (Math.random() - 0.5) * (width < 700 ? 18 : 28)
           });
@@ -173,21 +177,29 @@
 
       if (elapsed < timeline.orbit) {
         var orbitProgress = elapsed / timeline.orbit;
-        var localProgress = clamp(orbitProgress + particle.turnOffset, 0, 1);
+        var localProgress = clamp((orbitProgress - particle.turnOffset * 0.35) / (1 - particle.turnOffset * 0.35), 0, 1);
         var easedProgress = easeInOutSine(localProgress);
         var startDx = scatterX - centerX;
         var startDy = scatterY - centerY;
-        var foldAngle = easedProgress * Math.PI;
+        var globalAngle = easeInOutSine(orbitProgress) * Math.PI;
+        var localAngle = easedProgress * (Math.PI * 0.85) * particle.spinDirection;
+        var foldAngle = globalAngle * 0.55 + localAngle * 0.45;
         var cosFold = Math.cos(foldAngle);
         var sinFold = Math.sin(foldAngle);
-        var roamMix = 1 - Math.abs(localProgress - 0.5) * 2;
-        var roamX = particle.roamX * roamMix * Math.cos(localProgress * Math.PI * 2 + particle.phase);
-        var roamY = particle.roamY * roamMix * Math.sin(localProgress * Math.PI * 2 + particle.phase * 0.7);
+        var settle = 1 - easedProgress;
+        var roamX =
+          particle.roamX *
+          settle *
+          Math.cos(orbitProgress * Math.PI * 2 * particle.roamFrequencyX + particle.phase);
+        var roamY =
+          particle.roamY *
+          settle *
+          Math.sin(orbitProgress * Math.PI * 2 * particle.roamFrequencyY + particle.phase * 0.7);
         var zDepth = startDx * sinFold;
         var perspectiveDistance = width * 0.9;
         var perspectiveScale = perspectiveDistance / (perspectiveDistance - zDepth);
         var edgeNarrow = 0.45 + Math.abs(cosFold) * 0.55;
-        var verticalWave = Math.sin(localProgress * Math.PI * 2 + particle.phase) * particle.orbitLift * 0.45;
+        var verticalWave = Math.sin(orbitProgress * Math.PI * 2 + particle.phase) * particle.orbitLift * settle;
         var shade = 0.55 + ((zDepth / (width * 0.28)) + 1) * 0.22;
         var alphaBoost = 0.62 + perspectiveScale * 0.34;
         var orbitTargetX = centerX + startDx * cosFold * edgeNarrow;
@@ -260,7 +272,7 @@
 
         var followSpeed = particle.speed;
         if (motion.stage === "orbit") {
-          followSpeed = 0.18;
+          followSpeed = particle.orbitFollowSpeed;
         } else if (motion.stage === "gather") {
           followSpeed = 0.12;
         } else if (motion.stage === "scatter") {
