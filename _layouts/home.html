@@ -1,9 +1,9 @@
 <html>
   {% include head.html %}
-  <body>
+  <body class="is-homepage">
     {% include header.html %}
-    <main>
-      {% include content.html content=content %}
+    <main class="homepage_main">
+      {{ content }}
     </main>
     {% include footer.html %}
   </body>
