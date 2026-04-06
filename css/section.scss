@@ -48,7 +48,8 @@ body:not(.is-homepage) {
       background: rgba(8, 19, 34, 0.96);
       color: #f4f6fb;
       border-radius: 28px;
-      width: min($page, calc(100vw - 48px));
+      width: calc(100vw - 48px);
+      max-width: $page;
       margin: 24px auto;
       padding: 52px 48px;
     }

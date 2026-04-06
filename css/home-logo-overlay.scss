@@ -4,8 +4,9 @@
 @import "variables";
 
 body.is-homepage {
-  --hero-logo-overlay-height: min(100vh, 980px);
-  --hero-logo-stage-width: min(116vw, 1720px);
+  --hero-logo-overlay-height: 100vh;
+  --hero-logo-stage-width: 116vw;
+  --hero-logo-stage-max-width: 1220px;
   --hero-logo-scale: 1;
   --hero-logo-opacity: 0.22;
   --hero-logo-flow-opacity: 0.18;
@@ -16,6 +17,7 @@ body.is-homepage {
     right: 0;
     top: 0;
     height: var(--hero-logo-overlay-height);
+    max-height: 980px;
     z-index: 0;
     pointer-events: none;
     display: flex;
@@ -27,6 +29,7 @@ body.is-homepage {
   .home_logo_stage {
     position: relative;
     width: var(--hero-logo-stage-width);
+    max-width: var(--hero-logo-stage-max-width);
     transform: scale(var(--hero-logo-scale));
     transform-origin: center center;
   }
@@ -73,8 +76,13 @@ body.is-homepage {
 
 @media (max-width: $tablet) {
   body.is-homepage {
-    --hero-logo-overlay-height: min(84vh, 760px);
+    --hero-logo-overlay-height: 84vh;
     --hero-logo-stage-width: 136vw;
+    --hero-logo-stage-max-width: none;
     --hero-logo-opacity: 0.24;
+
+    .home_logo_overlay {
+      max-height: 760px;
+    }
   }
 }

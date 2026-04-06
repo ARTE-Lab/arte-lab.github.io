@@ -4,8 +4,9 @@
 @import "variables";
 
 body.is-homepage {
-  --home-static-logo-top: calc(min(100vh, 980px) - 120px);
-  --home-static-logo-width: min(1080px, 122vw);
+  --home-static-logo-top: calc(100vh - 120px);
+  --home-static-logo-width: 122vw;
+  --home-static-logo-max-width: 1080px;
   --home-static-logo-height: 1080px;
   --home-static-logo-opacity: 0.12;
   background: #05070b;
@@ -47,6 +48,7 @@ body.is-homepage {
     left: 50%;
     top: var(--home-static-logo-top);
     width: var(--home-static-logo-width);
+    max-width: var(--home-static-logo-max-width);
     height: var(--home-static-logo-height);
     transform: translateX(-50%);
     background: url("/assets/cv/logo_without_bg.png") no-repeat center top;
@@ -107,7 +109,8 @@ body.is-homepage {
 
   .home_shell {
     box-sizing: border-box;
-    width: min(1180px, calc(100vw - 64px));
+    width: calc(100vw - 64px);
+    max-width: 1180px;
     margin: 0 auto;
   }
 
@@ -389,13 +392,15 @@ body:not(.is-homepage) {
 
 @media (max-width: $tablet) {
   body.is-homepage {
-    --home-static-logo-top: calc(min(100vh, 760px) - 60px);
+    --home-static-logo-top: calc(84vh - 60px);
     --home-static-logo-width: 128vw;
+    --home-static-logo-max-width: none;
     --home-static-logo-height: 860px;
     --home-static-logo-opacity: 0.1;
 
     .home_shell {
-      width: min(100vw - 40px, 1180px);
+      width: calc(100vw - 40px);
+      max-width: 1180px;
     }
 
     .home_hero_shell,
