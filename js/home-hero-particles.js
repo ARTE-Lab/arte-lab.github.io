@@ -132,10 +132,13 @@
             baseY: y,
             orbitBaseX: x + Math.cos(angle) * radius,
             orbitBaseY: y + Math.sin(angle) * radius,
+            roamX: (Math.random() - 0.5) * (width < 700 ? 42 : 72),
+            roamY: (Math.random() - 0.5) * (width < 700 ? 28 : 52),
             size: width < 700 ? 1.15 + Math.random() * 1.1 : 1.3 + Math.random() * 1.5,
             color: brightenColor(r, g, b),
             baseAlpha: 0.18 + luminance / 680,
             phase: Math.random() * Math.PI * 2,
+            turnOffset: (Math.random() - 0.5) * 0.22,
             speed: 0.038 + Math.random() * 0.024,
             orbitLift: (Math.random() - 0.5) * (width < 700 ? 18 : 28)
           });
@@ -169,25 +172,33 @@
       elapsed -= timeline.scatter;
 
       if (elapsed < timeline.orbit) {
-        var orbitProgress = easeInOutSine(elapsed / timeline.orbit);
+        var orbitProgress = elapsed / timeline.orbit;
+        var localProgress = clamp(orbitProgress + particle.turnOffset, 0, 1);
+        var easedProgress = easeInOutSine(localProgress);
         var startDx = scatterX - centerX;
         var startDy = scatterY - centerY;
-        var foldAngle = orbitProgress * Math.PI * 2;
+        var foldAngle = easedProgress * Math.PI;
         var cosFold = Math.cos(foldAngle);
         var sinFold = Math.sin(foldAngle);
+        var roamMix = 1 - Math.abs(localProgress - 0.5) * 2;
+        var roamX = particle.roamX * roamMix * Math.cos(localProgress * Math.PI * 2 + particle.phase);
+        var roamY = particle.roamY * roamMix * Math.sin(localProgress * Math.PI * 2 + particle.phase * 0.7);
         var zDepth = startDx * sinFold;
-        var perspectiveDistance = width * 0.72;
+        var perspectiveDistance = width * 0.9;
         var perspectiveScale = perspectiveDistance / (perspectiveDistance - zDepth);
-        var edgeNarrow = 0.18 + Math.abs(cosFold) * 0.82;
-        var verticalWave = Math.sin(orbitProgress * Math.PI * 2 + particle.phase) * particle.orbitLift;
-        var shade = 0.52 + ((zDepth / (width * 0.24)) + 1) * 0.34;
+        var edgeNarrow = 0.45 + Math.abs(cosFold) * 0.55;
+        var verticalWave = Math.sin(localProgress * Math.PI * 2 + particle.phase) * particle.orbitLift * 0.45;
+        var shade = 0.55 + ((zDepth / (width * 0.28)) + 1) * 0.22;
+        var alphaBoost = 0.62 + perspectiveScale * 0.34;
+        var orbitTargetX = centerX + startDx * cosFold * edgeNarrow;
+        var orbitTargetY = centerY + startDy * perspectiveScale + verticalWave;
 
         return {
           stage: "orbit",
-          x: centerX + startDx * cosFold * edgeNarrow,
-          y: centerY + startDy * perspectiveScale + verticalWave,
-          scale: perspectiveScale,
-          alpha: particle.baseAlpha * (0.72 + perspectiveScale * 0.28),
+          x: orbitTargetX + roamX,
+          y: orbitTargetY + roamY,
+          scale: 0.82 + perspectiveScale * 0.35,
+          alpha: particle.baseAlpha * alphaBoost,
           shade: shade
         };
       }
