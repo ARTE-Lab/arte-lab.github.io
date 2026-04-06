@@ -5,19 +5,10 @@
 
 body.is-homepage {
   --hero-logo-overlay-height: min(100vh, 980px);
-  --hero-logo-stage-width: min(110vw, 1080px);
-  --hero-logo-scale: 0.7;
-  --hero-logo-opacity: 0.2;
+  --hero-logo-stage-width: min(116vw, 1720px);
+  --hero-logo-scale: 1;
+  --hero-logo-opacity: 0.22;
   --hero-logo-flow-opacity: 0.18;
-  position: relative;
-  overflow-x: hidden;
-
-  header,
-  main,
-  footer {
-    position: relative;
-    z-index: 1;
-  }
 
   .home_logo_overlay {
     position: absolute;
@@ -25,7 +16,7 @@ body.is-homepage {
     right: 0;
     top: 0;
     height: var(--hero-logo-overlay-height);
-    z-index: 5;
+    z-index: 0;
     pointer-events: none;
     display: flex;
     align-items: center;
@@ -37,6 +28,7 @@ body.is-homepage {
     position: relative;
     width: var(--hero-logo-stage-width);
     transform: scale(var(--hero-logo-scale));
+    transform-origin: center center;
   }
 
   .home_logo_image {
@@ -44,7 +36,7 @@ body.is-homepage {
     width: 100%;
     height: auto;
     opacity: var(--hero-logo-opacity);
-    filter: blur(1.6px) saturate(1.05) contrast(1.04);
+    filter: blur(1.6px) saturate(1.04) contrast(1.03);
   }
 
   .home_logo_flow {
@@ -53,14 +45,13 @@ body.is-homepage {
     background: linear-gradient(
       112deg,
       rgba(255, 255, 255, 0) 28%,
-      rgba(180, 246, 255, 0.5) 48%,
-      rgba(255, 188, 141, 0.35) 52%,
+      rgba(180, 246, 255, 0.46) 48%,
+      rgba(255, 188, 141, 0.28) 52%,
       rgba(255, 255, 255, 0) 72%
     );
-    mix-blend-mode: normal;
     filter: blur(10px);
     opacity: var(--hero-logo-flow-opacity);
-    transform: translateX(-30%) skewX(-8deg);
+    transform: translateX(-32%) skewX(-8deg);
     animation: logo_flow 7s ease-in-out infinite;
   }
 }
@@ -83,11 +74,7 @@ body.is-homepage {
 @media (max-width: $tablet) {
   body.is-homepage {
     --hero-logo-overlay-height: min(84vh, 760px);
-    --hero-logo-stage-width: 132vw;
+    --hero-logo-stage-width: 136vw;
     --hero-logo-opacity: 0.24;
-
-    .home_logo_stage {
-      max-width: none;
-    }
   }
 }

@@ -35,3 +35,45 @@ body {
     }
   }
 }
+
+body:not(.is-homepage) {
+  main {
+    background: #07111d;
+  }
+
+  section {
+    background: transparent;
+
+    .section {
+      background: rgba(8, 19, 34, 0.96);
+      color: #f4f6fb;
+      border-radius: 28px;
+      width: min($page, calc(100vw - 48px));
+      margin: 24px auto;
+      padding: 52px 48px;
+    }
+
+    &:nth-child(even) {
+      background: transparent;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li,
+  .role,
+  .card_text {
+    color: #f4f6fb;
+  }
+
+  a {
+    color: #8fd6df;
+  }
+
+  a:hover {
+    color: #ffffff;
+  }
+}
