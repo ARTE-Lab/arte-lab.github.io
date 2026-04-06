@@ -57,32 +57,30 @@ layout: default
 
 {{ content }}
 
-{% assign names = "" | split: ',' %}
 {% assign english_name = page.title | split: "(" | first | split: "（" | first | strip %}
+{% assign search_terms = "" %}
 
 {% if page.paper_search.first %}
-{% assign names = names | concat: page.paper_search %}
+  {% capture search_terms %}
+    {% for name in page.paper_search %}{{ search_terms }}"{{ name }}" {% endfor %}
+  {% endcapture %}
 {% elsif page.paper_search %}
-{% assign names = names | push: page.paper_search %}
+  {% capture search_terms %}"{{ page.paper_search }}" {% endcapture %}
 {% elsif english_name %}
-{% assign names = names | push: english_name %}
+  {% capture search_terms %}"{{ english_name }}" {% endcapture %}
 {% elsif page.title %}
-{% assign names = names | push: page.title %}
+  {% capture search_terms %}"{{ page.title }}" {% endcapture %}
 {% endif %}
 
 {% assign english_parts = english_name | split: " " %}
 {% if english_parts.size == 2 %}
-{% assign reversed_name = english_parts[1] | append: " " | append: english_parts[0] %}
-{% unless names contains reversed_name %}
-{% assign names = names | push: reversed_name %}
-{% endunless %}
+  {% assign reversed_name = english_parts[1] | append: " " | append: english_parts[0] %}
+  {% unless search_terms contains reversed_name %}
+    {% capture search_terms %}{{ search_terms }}"{{ reversed_name }}" {% endcapture %}
+  {% endunless %}
 {% endif %}
 
-{% capture search %}
-{% for name in names %}"{{ name }}" {% endfor %}
-{% endcapture %}
-
-{% assign search =  search | strip | prepend: "/research/?search=" %}
+{% assign search = search_terms | strip | prepend: "/research/?search=" %}
 
 {% capture text %}
 {{ page.title }}'s papers
