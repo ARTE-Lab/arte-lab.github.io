@@ -30,8 +30,8 @@ body.is-homepage {
     position: absolute;
     left: 50%;
     top: calc(min(100vh, 980px) - 60px);
-    width: min(1240px, 118vw);
-    height: 1200px;
+    width: min(840px, 118vw);
+    height: 800px;
     transform: translateX(-50%);
     background: url("/assets/cv/logo_without_bg.png") no-repeat center top;
     background-size: contain;
