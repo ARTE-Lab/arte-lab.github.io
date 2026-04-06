@@ -4,49 +4,54 @@
 @import "variables";
 
 body.is-homepage {
-  .home_hero .home_logo_overlay {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+  position: relative;
+  overflow-x: hidden;
+
+  header,
+  main,
+  footer {
+    position: relative;
     z-index: 1;
+  }
+
+  .home_logo_overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 5;
     pointer-events: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
   }
 
-  .home_hero .home_logo_stage {
+  .home_logo_stage {
     position: relative;
-    width: 116vw;
-    max-width: 1220px;
-    transform: scale(1);
-    transform-origin: center center;
+    width: min(110vw, 1580px);
+    transform: scale(1.5);
   }
 
-  .home_hero .home_logo_image {
+  .home_logo_image {
     display: block;
-    width: 100%;
+    width: 120%;
     height: auto;
-    opacity: 0.22;
-    filter: blur(1.6px) saturate(1.04) contrast(1.03);
+    opacity: 0.2;
+    filter: blur(1.6px) saturate(1.05) contrast(1.04);
   }
 
-  .home_hero .home_logo_flow {
+  .home_logo_flow {
     position: absolute;
     inset: -4%;
     background: linear-gradient(
       112deg,
       rgba(255, 255, 255, 0) 28%,
-      rgba(180, 246, 255, 0.46) 48%,
-      rgba(255, 188, 141, 0.28) 52%,
+      rgba(180, 246, 255, 0.5) 48%,
+      rgba(255, 188, 141, 0.35) 52%,
       rgba(255, 255, 255, 0) 72%
     );
+    mix-blend-mode: normal;
     filter: blur(10px);
-    opacity: 0.18;
-    transform: translateX(-32%) skewX(-8deg);
+    opacity: 0.2;
+    transform: translateX(-30%) skewX(-8deg);
     animation: logo_flow 7s ease-in-out infinite;
   }
 }
@@ -54,32 +59,26 @@ body.is-homepage {
 @keyframes logo_flow {
   0% {
     transform: translateX(-32%) skewX(-8deg);
-    opacity: 0.16;
+    opacity: 0.22;
   }
   50% {
-    transform: translateX(28%) skewX(-8deg);
-    opacity: 0.28;
+    transform: translateX(32%) skewX(-8deg);
+    opacity: 0.4;
   }
   100% {
     transform: translateX(-32%) skewX(-8deg);
-    opacity: 0.16;
+    opacity: 0.22;
   }
 }
 
 @media (max-width: $tablet) {
   body.is-homepage {
-    .home_hero .home_logo_overlay {
-      bottom: auto;
-      height: 84vh;
-      max-height: 760px;
-    }
-
-    .home_hero .home_logo_stage {
-      width: 136vw;
+    .home_logo_stage {
+      width: 132vw;
       max-width: none;
     }
 
-    .home_hero .home_logo_image {
+    .home_logo_image {
       opacity: 0.24;
     }
   }

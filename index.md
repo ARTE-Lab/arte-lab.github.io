@@ -1,142 +1,27 @@
 ---
 layout: default
-title: ARTE Group
+title: ARTE Lab
 ---
+# ARTE Group  
+Autonomous Representation de Temps et Espace  
 
-<section class="home_hero">
-  <div class="home_logo_overlay" aria-hidden="true">
-    <div class="home_logo_stage">
-      <img class="home_logo_image" src="{{ 'assets/cv/new_logo_cut.jpg' | relative_url }}" alt="" />
-      <span class="home_logo_flow"></span>
-    </div>
-  </div>
-  <div class="home_shell home_hero_shell">
-    <div class="home_hero_copy">
-      <p class="home_kicker">UCAS · LAMP Laboratory</p>
-      <h1>ARTE Group</h1>
-      <p class="home_subtitle">Autonomous Representation de Temps et Espace</p>
-      <p class="home_intro">
-        The ARTE Group is a research group affiliated with the LAMP Laboratory led by
-        <a href="https://people.ucas.ac.cn/~qxye?language=en">Prof. Qixiang Ye</a>
-        at the University of Chinese Academy of Sciences (UCAS).
-      </p>
-      <div class="home_actions">
-        <a class="home_button home_button_primary" href="{{ '/research/' | relative_url }}">Representative Works</a>
-        <a class="home_button home_button_secondary" href="#about">About</a>
-      </div>
-    </div>
-  </div>
-</section>
+The ARTE Group is a research group affiliated with the [LAMP Laboratory](http://lamp.ucas.ac.cn) led by [Prof. Qixiang Ye](https://people.ucas.ac.cn/~qxye?language=en) at the University of Chinese Academy of Sciences (UCAS).
 
-<section class="home_section" id="about">
-  <div class="home_shell">
-    <div class="home_section_heading">
-      <p class="home_eyebrow">About</p>
-      <h2>Building representations that understand how the physical world evolves.</h2>
-    </div>
-    <div class="home_about_grid">
-      <p>
-        Rather than treating the physical world as a static collection of observations, we
-        study how intelligent systems can form compact, structured, and predictive
-        representations of space, time, and interaction.
-      </p>
-      <p>
-        Our work spans spatial intelligence, autonomous driving, world models, and
-        multimodal representation learning, with the goal of making machine perception
-        more grounded, coherent, and actionable.
-      </p>
-    </div>
-  </div>
-</section>
+## About
 
-<section class="home_section home_section_light" id="works">
-  <div class="home_shell">
-    <div class="home_section_heading">
-      <p class="home_eyebrow">Representative Works</p>
-      <h2>Selected projects from our recent research.</h2>
-    </div>
-    {% assign featured_works = site.data.research-output | sort: "date" | reverse %}
-    <div class="home_work_grid">
-      {% for paper in featured_works limit: 4 %}
-      {% if paper.page %}
-      {% assign work_link = paper.page | relative_url %}
-      {% else %}
-      {% assign work_link = paper.link %}
-      {% endif %}
-      <article class="home_work_card">
-        <a class="home_work_image" href="{{ work_link }}">
-          <img src="{{ paper.image | relative_url }}" alt="{{ paper.title }}" />
-        </a>
-        <div class="home_work_body">
-          <p class="home_work_meta">{{ paper.publisher }} · {{ paper.date | append: '' | slice: 0, 4 }}</p>
-          <a class="home_work_title" href="{{ work_link }}">{{ paper.title }}</a>
-          <p class="home_work_authors">{{ paper.authors | join: ", " }}</p>
-        </div>
-      </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+Rather than treating the physical world as a static collection of data, we view it as a highly dynamic and interconnected system. Our mission is to decode the complex geometry of space and the continuous flow of time, integrating them into elegant, scalable representations. By bridging the gap between raw, multi-modal perception and deep structural understanding, we aim to develop intelligent systems that do not merely observe their surroundings but inherently grasp the underlying physical dynamics to anticipate and interact with reality seamlessly.
 
-<section class="home_section" id="directions">
-  <div class="home_shell">
-    <div class="home_section_heading">
-      <p class="home_eyebrow">Directions</p>
-      <h2>Research directions that shape our current work.</h2>
-    </div>
-    <div class="home_direction_grid">
-      <article class="home_direction_card">
-        <h3>Spatial Intelligence</h3>
-        <p>Learning representations that reason about structure, geometry, and interaction in complex 3D worlds.</p>
-      </article>
-      <article class="home_direction_card">
-        <h3>Autonomous Driving</h3>
-        <p>Connecting perception, prediction, and planning with grounded multimodal understanding.</p>
-      </article>
-      <article class="home_direction_card">
-        <h3>World Models</h3>
-        <p>Modeling temporal dynamics and latent structure so intelligent systems can predict and simulate future states.</p>
-      </article>
-      <article class="home_direction_card">
-        <h3>Representation Learning</h3>
-        <p>Designing scalable self-supervised and multimodal learning strategies for real-world visual understanding.</p>
-      </article>
-    </div>
-  </div>
-</section>
 
-<section class="home_section home_section_light" id="professor">
-  <div class="home_shell">
-    {% assign professor = site.members | where: "role", "professor" | where: "group", "current" | first %}
-    <div class="home_section_heading">
-      <p class="home_eyebrow">Professor</p>
-      <h2>Leading the group with a focus on grounded visual intelligence.</h2>
-    </div>
-    <div class="home_professor_layout">
-      <div class="home_professor_profile">
-        {% include portrait.html
-          name=professor.title
-          link=professor.url
-          image=professor.image
-          role=professor.role
-        %}
-      </div>
-      <div class="home_professor_bio">
-        {{ professor.content | markdownify }}
-      </div>
-    </div>
-  </div>
-</section>
+## Research Interests
 
-<section class="home_section home_section_compact" id="explore">
-  <div class="home_shell home_cta">
-    <div>
-      <p class="home_eyebrow">Explore More</p>
-      <h2>See our publications, projects, and team.</h2>
-    </div>
-    <div class="home_actions">
-      <a class="home_button home_button_primary" href="{{ '/research/' | relative_url }}">Publications</a>
-      <a class="home_button home_button_secondary" href="{{ '/team/' | relative_url }}">Team</a>
-    </div>
-  </div>
-</section>
+We are exploring representations that can autonomously adapt to the continuous evolution of the physical world. Our explorations are currently guided by the following areas:
+
+- **Spatial Intelligence** *Synthesizing physical intuition.* We build foundational models that empower embodied systems to simulate, reason, and predict within complex 3D environments, internalizing the spatial and temporal rules of the real world.
+- **Embodied AI & Autonomous Driving:** *Translating perception into action.* We focus on equipping artificial systems with the physical grounding necessary to navigate and interact safely within dynamic environments with fluidity and foresight.
+- **Spatio-Temporal Representation Learning:** *Distilling dynamic reality.* We seek to transform raw, high-dimensional sensory streams—across vision, LiDAR, and beyond—into unified, actionable knowledge that transcends isolated frames or single viewpoints.
+- **Neural Simulation & Synthesis:** *Constructing interactive realities.* We leverage generative approaches to create high-fidelity, data-driven simulators, providing scalable virtual environments where these systems can safely learn and evolve.
+
+
+## Contact
+
+For collaboration and research inquiries, please contact us through the laboratory (tongzhang@ucas.ac.cn) or our project repositories on GitHub.   
