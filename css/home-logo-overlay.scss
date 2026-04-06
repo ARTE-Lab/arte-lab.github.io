@@ -4,38 +4,35 @@
 @import "variables";
 
 body.is-homepage {
-  position: relative;
-  overflow-x: hidden;
-
-  header,
-  main,
-  footer {
-    position: relative;
-    z-index: 1;
-  }
-
   .home_logo_overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    max-height: 980px;
+    z-index: 0;
     pointer-events: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
 
   .home_logo_stage {
     position: relative;
-    width: min(110vw, 1580px);
-    transform: scale(1.5);
+    width: 116vw;
+    max-width: 1220px;
+    transform: scale(1);
+    transform-origin: center center;
   }
 
   .home_logo_image {
     display: block;
-    width: 120%;
+    width: 100%;
     height: auto;
-    opacity: 0.2;
-    filter: blur(1.6px) saturate(1.05) contrast(1.04);
+    opacity: 0.22;
+    filter: blur(1.6px) saturate(1.04) contrast(1.03);
   }
 
   .home_logo_flow {
@@ -44,14 +41,13 @@ body.is-homepage {
     background: linear-gradient(
       112deg,
       rgba(255, 255, 255, 0) 28%,
-      rgba(180, 246, 255, 0.5) 48%,
-      rgba(255, 188, 141, 0.35) 52%,
+      rgba(180, 246, 255, 0.46) 48%,
+      rgba(255, 188, 141, 0.28) 52%,
       rgba(255, 255, 255, 0) 72%
     );
-    mix-blend-mode: normal;
     filter: blur(10px);
-    opacity: 0.2;
-    transform: translateX(-30%) skewX(-8deg);
+    opacity: 0.18;
+    transform: translateX(-32%) skewX(-8deg);
     animation: logo_flow 7s ease-in-out infinite;
   }
 }
@@ -59,22 +55,27 @@ body.is-homepage {
 @keyframes logo_flow {
   0% {
     transform: translateX(-32%) skewX(-8deg);
-    opacity: 0.22;
+    opacity: 0.16;
   }
   50% {
-    transform: translateX(32%) skewX(-8deg);
-    opacity: 0.4;
+    transform: translateX(28%) skewX(-8deg);
+    opacity: 0.28;
   }
   100% {
     transform: translateX(-32%) skewX(-8deg);
-    opacity: 0.22;
+    opacity: 0.16;
   }
 }
 
 @media (max-width: $tablet) {
   body.is-homepage {
+    .home_logo_overlay {
+      height: 84vh;
+      max-height: 760px;
+    }
+
     .home_logo_stage {
-      width: 132vw;
+      width: 136vw;
       max-width: none;
     }
 
