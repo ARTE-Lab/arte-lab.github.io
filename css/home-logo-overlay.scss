@@ -26,7 +26,8 @@ body.is-homepage {
 
   .home_logo_stage {
     position: relative;
-    width: min(110vw, 1580px);
+    width: 110vw;
+    max-width: 1580px;
     transform: scale(1.5);
   }
 
