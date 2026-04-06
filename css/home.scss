@@ -27,7 +27,7 @@ body.is-homepage {
 
   main.homepage_main::before {
     content: "";
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: calc(min(100vh, 980px) - 120px);
     width: min(1080px, 122vw);
