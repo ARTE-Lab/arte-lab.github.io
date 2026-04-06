@@ -5,10 +5,11 @@ title: ARTE Group
 
 <section class="home_hero">
   <div class="home_hero_overlay" aria-hidden="true">
-    <div class="home_hero_overlay_stage">
-      <img class="home_hero_overlay_image" src="{{ 'assets/cv/new_logo_cut.jpg' | relative_url }}" alt="" />
-      <span class="home_hero_overlay_flow"></span>
-    </div>
+    <canvas
+      class="home_hero_particles"
+      data-image="{{ 'assets/cv/new_logo_cut.jpg' | relative_url }}"
+    ></canvas>
+    <img class="home_hero_overlay_image" src="{{ 'assets/cv/new_logo_cut.jpg' | relative_url }}" alt="" />
   </div>
 
   <div class="home_shell home_hero_shell">
