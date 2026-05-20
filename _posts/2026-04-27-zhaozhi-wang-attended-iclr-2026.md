@@ -10,7 +10,7 @@ tags:
   - VideoAnchor
 ---
 
-From April 23 to April 27, 2026, [Zhaozhi Wang](/members/Zhaozhi-Wang/) attended the [International Conference on Learning Representations (ICLR 2026)](https://iclr.cc/Conferences/2026) in Rio de Janeiro, Brazil. During the conference, he presented our paper, [*VideoAnchor: Reinforcing Subspace-Structured Visual Cues for Coherent Visual-Spatial Reasoning*](/research/videoanchor/).
+From April 23 to April 27, 2026, [Zhaozhi Wang](https://arte-lab.github.io/members/Zhaozhi-Wang.html) attended the [International Conference on Learning Representations (ICLR 2026)](https://iclr.cc/Conferences/2026) in Rio de Janeiro, Brazil. During the conference, he presented our paper, [*VideoAnchor: Reinforcing Subspace-Structured Visual Cues for Coherent Visual-Spatial Reasoning*](/research/videoanchor/).
 
 This work studies coherent visual-spatial reasoning by reinforcing subspace-structured visual cues in video understanding. Congratulations to Zhaozhi and the team on this exciting presentation at ICLR 2026.
 
