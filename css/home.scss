@@ -374,6 +374,45 @@ body.is-homepage {
     gap: 24px;
   }
 
+  .home_news_list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .home_news_card {
+    padding: 28px;
+    border-radius: 28px;
+    background: #ffffff;
+    border: 1px solid rgba(16, 32, 51, 0.08);
+    box-shadow: 0 24px 60px rgba(8, 24, 45, 0.08);
+  }
+
+  .home_news_meta {
+    margin: 0 0 12px;
+    font-size: 0.84rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5f7387;
+  }
+
+  .home_news_title {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-family: $sans;
+    font-size: 1.2rem;
+    font-weight: $semi-bold;
+    line-height: 1.45;
+    color: #102033 !important;
+    text-decoration: none;
+  }
+
+  .home_news_excerpt {
+    margin: 0;
+    color: #46586c;
+    line-height: 1.8;
+  }
+
   .home_direction_card h3 {
     margin: 0 0 10px;
     font-family: $sans;
@@ -450,6 +489,7 @@ body.is-homepage {
 
     .home_about_grid,
     .home_work_grid,
+    .home_news_list,
     .home_direction_grid,
     .home_professor_layout {
       grid-template-columns: 1fr;

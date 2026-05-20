@@ -130,6 +130,28 @@ title: ARTE Group
   </div>
 </section>
 
+<section class="home_section home_section_light" id="news">
+  <div class="home_shell">
+    <div class="home_section_heading">
+      <p class="home_eyebrow">Recent News</p>
+      <h2>Updates from our papers, people, and events.</h2>
+    </div>
+    {% assign recent_news = site.posts | where: "category", "news" | sort: "date" | reverse %}
+    <div class="home_news_list">
+      {% for post in recent_news limit: 3 %}
+      <article class="home_news_card">
+        <p class="home_news_meta">{{ post.date | date: "%B %d, %Y" }}</p>
+        <a class="home_news_title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <p class="home_news_excerpt">{{ post.content | strip_html | truncate: 180 }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="home_actions">
+      <a class="home_button home_button_primary" href="{{ '/news/' | relative_url }}">All News</a>
+    </div>
+  </div>
+</section>
+
 <section class="home_section home_section_dark home_section_compact" id="explore">
   <div class="home_shell home_cta">
     <div>
