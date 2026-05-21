@@ -14,6 +14,8 @@ From April 23 to April 27, 2026, [Zhaozhi Wang](https://arte-lab.github.io/membe
 
 In this work, we identify that multimodal large language models often struggle with visual-spatial reasoning because visual tokens are overshadowed by language tokens in attention. To address this issue, we propose VideoAnchor, a plug-and-play module that reinforces shared visual cues across frames without retraining, leading to more coherent visual grounding and stronger performance on spatial reasoning benchmarks. Congratulations to Zhaozhi and the team on this exciting presentation at ICLR 2026.
 
+Congratulations to Zhaozhi!
+
 {% include gallery.html
   image1="news-imgs/iclr2026-zhaozhi/1.jpg"
   image2="news-imgs/iclr2026-zhaozhi/2.jpg"
