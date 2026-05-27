@@ -14,7 +14,7 @@ Prof. [Tong Zhang](https://arte-lab.github.io/members/Tong-Zhang.html), together
 
 During the A2 workshop, *World Model: A New Paradigm for Autonomous Driving Research from High-Quality Data Generation to Reinforcement Learning Training*, Zhaozhi delivered a talk on behalf of Prof. Zhang's team. The presentation, titled *Exploring Safety for Autonomous Driving: From Scene Generation to Planning*, discussed how scenario generation and planning methods can support safer autonomous-driving systems. More information about the conference is available on the [CICV official website](http://www.cicv.org.cn/CN/home/index.html).
 
-Congratulations to Prof. Zhang, Zhaozhi, and the team on sharing our autonomous-driving research with the CICV community.
+Congratulations to Prof. Zhang, our team member Zhaozhi, and the team on sharing our autonomous-driving research with the CICV community.
 
 {% include gallery.html
   image1="news-imgs/cicv/zhaozhi.jpg"
