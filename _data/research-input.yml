@@ -33,6 +33,7 @@
     - "Haoyang Zhang"
     - "Fei He"
     - "Rui Wu"
+    - "Yanhu Shan"
     - "Congpei Qiu"
     - "Liang Gao"
     - "Wei Ke"
@@ -41,16 +42,19 @@
   date: 2026
   link: https://arxiv.org/abs/2601.01762
   page: /research/aligndrive/
-  image: assets/cv/AlignDrive.png
+  image: assets/cv/aligndrive-teaser-v11.png
   tags:
     - autonomous driving
     - end-to-end planning
-    - trajectory planning
+    - lateral-longitudinal planning
     - arXiv 2026
   extra-links:
     - type: website
       link: https://yanhaowu.github.io/AlignDrive/
       text: Project Page
+    - type: source
+      link: https://github.com/YanhaoWu/AlignDrive
+      text: Code
 
 - id: qiu2024mind
   title: "Mind Your Augmentation: The Key to Decoupling Dense Self-Supervised Learning"
