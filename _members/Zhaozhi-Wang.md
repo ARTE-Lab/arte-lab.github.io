@@ -8,7 +8,7 @@ role: "Graduate student"
 scholar: "https://scholar.google.com/citations?user=CkDanj8AAAAJ"
 image: "/assets/cv/zhaozhi_wang_photo.jpg"
 email: "345939290@qq.com"
-group: "current"
+group: "alum"
 personal homepage: "https://feufhd.github.io/ZhaozhiWang/"
 ---
  
