@@ -1,5 +1,5 @@
 ---
-title: "Jiale Wang"
+title: "Jiale Wang(王家乐)"
 search:
   - "3D Computer Vision"
   - "World Model"
